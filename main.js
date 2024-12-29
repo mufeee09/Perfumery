@@ -3,7 +3,7 @@ const products = [
         name: "Midnight Rose",
         description: "A seductive blend of dark rose and vanilla",
         price: "₹129.99",
-        image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?w=400",
+        image: "Logo/photo-1587017539504-67cfbddac569.jpeg",
         whatsapp: "https://wa.me/916360751727?text=I'm%20interested%20in%20buying%20Midnight%20Rose%20perfume",
         instagram: "https://instagram.com/rolscheventon.official"
     },
@@ -11,7 +11,7 @@ const products = [
         name: "Ocean Breeze",
         description: "Fresh marine notes with citrus undertones",
         price: "₹89.99",
-        image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400",
+        image: "Logo/photo-1588405748880-12d1d2a59f75.jpeg",
         whatsapp: "https://wa.me/916360751727?text=I'm%20interested%20in%20buying%20Ocean%20Breeze%20perfume",
         instagram: "https://instagram.com/rolscheventon.official"
     },
@@ -19,7 +19,7 @@ const products = [
         name: "Golden Amber",
         description: "Warm amber mixed with exotic spices",
         price: "₹149.99",
-        image: "641460.jpg",
+        image: "Logo/641460.jpg",
         whatsapp: "https://wa.me/916360751727?text=I'm%20interested%20in%20buying%20Golden%20Amber%20perfume",
         instagram: "https://instagram.com/rolscheventon.official"
     },
@@ -27,26 +27,26 @@ const products = [
         name: "Pure Jasmine",
         description: "Delicate jasmine with subtle woody notes",
         price: "₹109.99",
-        image: "https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=400",
-        whatsapp: "https://wa.me/916360751727?text=I'm%20interested%20in%20buying%20Pure%20Jasmine%20perfume",
-        instagram: "https://instagram.com/rolscheventon.official"
-    },
-    {
-        name: "Golden Amber",
-        description: "Warm amber mixed with exotic spices",
-        price: "₹149.99",
-        image: "4ba156baf348906f49b50423a2a1cfb4.jpg",
-        whatsapp: "https://wa.me/916360751727?text=I'm%20interested%20in%20buying%20Golden%20Amber%20perfume",
-        instagram: "https://instagram.com/rolscheventon.official"
-    },
-    {
-        name: "Pure Jasmine",
-        description: "Delicate jasmine with subtle woody notes",
-        price: "₹109.99",
-        image: "https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=400",
+        image: "Logo/photo-1594035910387-fea47794261f.jpeg",
         whatsapp: "https://wa.me/916360751727?text=I'm%20interested%20in%20buying%20Pure%20Jasmine%20perfume",
         instagram: "https://instagram.com/rolscheventon.official"
     }
+    // {
+    //     name: "Golden Amber",
+    //     description: "Warm amber mixed with exotic spices",
+    //     price: "₹149.99",
+    //     image: "4ba156baf348906f49b50423a2a1cfb4.jpg",
+    //     whatsapp: "https://wa.me/916360751727?text=I'm%20interested%20in%20buying%20Golden%20Amber%20perfume",
+    //     instagram: "https://instagram.com/rolscheventon.official"
+    // },
+    // {
+    //     name: "Pure Jasmine",
+    //     description: "Delicate jasmine with subtle woody notes",
+    //     price: "₹109.99",
+    //     image: "https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=400",
+    //     whatsapp: "https://wa.me/916360751727?text=I'm%20interested%20in%20buying%20Pure%20Jasmine%20perfume",
+    //     instagram: "https://instagram.com/rolscheventon.official"
+    // }
 ];
 
 function createProductCard(product) {

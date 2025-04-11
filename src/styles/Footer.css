@@ -1,0 +1,23 @@
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.footer-tagline {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+.footer-span{
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+.footer-copyright {
+    font-size: 0.9rem;
+    color: #ffffff;
+}

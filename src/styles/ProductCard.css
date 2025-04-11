@@ -1,0 +1,77 @@
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-info h3 {
+    margin-bottom: 0.5rem;
+}
+
+.product-info p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.price-info {
+    display: flex;
+    gap: 10px; /* Adds space between price and discount */
+    align-items: center; /* Aligns items vertically in case of uneven height */
+}
+
+.price {
+    font-weight: bold;
+    color: #0006b8;
+}
+
+.discount {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.quantity{
+    display: block;
+    font-weight:lighter;
+    color: #000000;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.order-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.order-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.order-btn:hover {
+    opacity: 0.9;
+}
+
+.order-btn i {
+    margin-right: 0.5rem;
+}
+
+.whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.whatsapp-button:hover {
+    background: linear-gradient(135deg, #128C7E, #25D366); /* Reverse gradient on hover */
+}
+
+.instagram {
+    background:  radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+}

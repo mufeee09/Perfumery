@@ -1,0 +1,44 @@
+
+.hero {
+    height: 100vh;
+    /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
+                /* url('https://i.pinimg.com/474x/8f/21/be/8f21be31b54dcb27815d49054ddc65b1.jpg') center/cover;  #008080*/
+    /* background-image: url('OIP.jpeg'); */
+    background-color: rgb(3, 171, 171);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.hero-content {
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    /* background: #0006b8; */
+    background: #191970;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    background: #0006b8;;
+}

@@ -106,13 +106,14 @@ function ProductCard({ product }) {
   const handlePayment = async () => {
     try {
       // Use discount price if available
-      const amountToPay = (product.discountPrice || product.price) * 100; // Razorpay expects paise
+      const amountToPay = product.discountPrice || product.price;
 
       const res = await fetch("/api/create-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount: amountToPay }),
+        body: JSON.stringify({ amount: amountToPay }), // send ₹, backend converts to paise
       });
+
 
       const data = await res.json();
 
@@ -155,29 +156,29 @@ function ProductCard({ product }) {
   };
 
   return (
-    <div 
+    <div
       className="modern-product-card-wrapper"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className={`modern-product-card ${isHovered ? 'card-hovered' : ''}`}>
         <div className="modern-image-container">
-          <img 
-            src={product.image || "/placeholder.png"} 
-            alt={product.name} 
+          <img
+            src={product.image || "/placeholder.png"}
+            alt={product.name}
             className="modern-product-image"
           />
           <div className="modern-image-overlay"></div>
         </div>
-        
+
         <div className="modern-product-content">
           <div className="modern-product-header">
             <h3 className="modern-product-title">{product.name}</h3>
             {/* <div className="modern-badge">New</div> */}
           </div>
-          
+
           <p className="modern-product-description">{product.description}</p>
-          
+
           <div className="modern-product-footer">
             <div className="modern-price-section">
               <span className="modern-price-label">Price</span>
@@ -192,8 +193,8 @@ function ProductCard({ product }) {
                 <span className="modern-price-amount">₹{product.price}</span>
               )}
             </div>
-            
-            <button 
+
+            <button
               className="modern-pay-button"
               onClick={handlePayment}
             >

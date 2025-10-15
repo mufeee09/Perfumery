@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import ProductCard from "./ProductCard";
-import '../styles/Product.css';
+// import React, { useState } from "react";
+// import ProductCard from "./ProductCard";
+// import '../styles/Product.css';
 
 // import img1 from "../images/641460.jpg";
 // import img2 from "../images/OIP.jpeg"
@@ -84,6 +84,95 @@ import '../styles/Product.css';
 // import React, { useState } from "react";
 // import ProductCard from "./ProductCard";
 // import '../styles/Product.css';
+
+
+// import React, { useState } from "react";
+// import ProductCard from "./ProductCard";
+// import '../styles/Product.css';
+// import img1 from "../images/641460.jpg";
+// import img2 from "../images/OIP.jpeg";
+
+// const products = [
+//   {
+//     name: "Midnight Rose",
+//     description: "A seductive blend of dark rose and vanilla",
+//     price: 129, // number in ₹
+//     image: img1,
+//   },
+//   {
+//     name: "Ocean Breeze",
+//     description: "Fresh marine notes with citrus undertones",
+//     price: 89,
+//     image: img2,
+//   },
+//   {
+//     name: "Midnight Rose",
+//     description: "A seductive blend of dark rose and vanilla",
+//     price: 129,
+//     image: img1,
+//   },
+//   // {
+//   //   name: "Ocean Breeze",
+//   //   description: "Fresh marine notes with citrus undertones",
+//   //   price: 89,
+//   //   image: img2,
+//   // },
+//   // {
+//   //   name: "Ocean Breeze",
+//   //   description: "Fresh marine notes with citrus undertones",
+//   //   price: 89,
+//   //   image: img2,
+//   // },
+//   // {
+//   //   name: "Midnight Rose",
+//   //   description: "A seductive blend of dark rose and vanilla",
+//   //   price: 129,
+//   //   image: img1,
+//   // },
+//   // {
+//   //   name: "Ocean Breeze",
+//   //   description: "Fresh marine notes with citrus undertones",
+//   //   price: 89,
+//   //   image: img2,
+//   // }
+// ];
+
+// function Products() {
+//   const [searchTerm, setSearchTerm] = useState("");
+
+//   const filteredProducts = products.filter(product =>
+//     product.name.toLowerCase().includes(searchTerm.toLowerCase())
+//   );
+
+//   return (
+//     <section id="products" className="products">
+//       <h2>Our Collection</h2>
+//       <div className="field">
+//         <input
+//           type="text"
+//           placeholder="Search Products..."
+//           className="search-box"
+//           value={searchTerm}
+//           onChange={(e) => setSearchTerm(e.target.value)}
+//         />
+//       </div>
+
+//       <div className="product-grid">
+//         {filteredProducts.map((product, index) => (
+//           <ProductCard key={index} product={product} />
+//         ))}
+//       </div>
+//     </section>
+//   );
+// }
+
+// export default Products;
+
+
+
+import React, { useState } from "react";
+import ProductCard from "./ProductCard";
+import '../styles/Product.css';
 import img1 from "../images/641460.jpg";
 import img2 from "../images/OIP.jpeg";
 
@@ -91,46 +180,28 @@ const products = [
   {
     name: "Midnight Rose",
     description: "A seductive blend of dark rose and vanilla",
-    price: "129", // remove ₹ and make it number (Razorpay expects amount in paise)
+    price: 129, // original price in ₹
+    discountPrice: 99, // discount price in ₹
     image: img1,
   },
   {
     name: "Ocean Breeze",
     description: "Fresh marine notes with citrus undertones",
-    price: "89",
+    price: 89,
+    discountPrice: null, // no discount
     image: img2,
-  }
+  },
+  {
+    name: "Midnight Rose",
+    description: "A seductive blend of dark rose and vanilla",
+    price: 129,
+    discountPrice: 109,
+    image: img1,
+  },
 ];
 
 function Products() {
   const [searchTerm, setSearchTerm] = useState("");
-
-  const handlePayNow = async (product) => {
-    const amount = product.price * 100; // Razorpay uses paise
-
-    const options = {
-      key: process.env.REACT_APP_RAZORPAY_KEY_ID,
-      amount,
-      currency: "INR",
-      name: "Rolsch Eventon",
-      description: `Purchase of ${product.name}`,
-      image: "/favicon.ico",
-      handler: function (response) {
-        alert(`Payment successful! Payment ID: ${response.razorpay_payment_id}`);
-      },
-      prefill: {
-        name: "Customer",
-        email: "customer@example.com",
-        contact: "9999999999",
-      },
-      theme: {
-        color: "#F37254",
-      },
-    };
-
-    const rzp = new window.Razorpay(options);
-    rzp.open();
-  };
 
   const filteredProducts = products.filter(product =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -151,15 +222,7 @@ function Products() {
 
       <div className="product-grid">
         {filteredProducts.map((product, index) => (
-          <div key={index} className="product-card">
-            <img src={product.image} alt={product.name} className="product-image" />
-            <h3>{product.name}</h3>
-            <p>{product.description}</p>
-            <p>₹{product.price}</p>
-            <button className="pay-btn" onClick={() => handlePayNow(product)}>
-              Pay Now
-            </button>
-          </div>
+          <ProductCard key={index} product={product} />
         ))}
       </div>
     </section>

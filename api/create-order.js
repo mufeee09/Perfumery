@@ -19,7 +19,7 @@ export default async function handler(req, res) {
     });
 
     const order = await instance.orders.create({
-      amount: amountNum * 100, // convert ₹ to paise here
+      amount: Math.round(amountNum * 100), // Razorpay expects paise
       currency: "INR",
       receipt: "receipt_" + Date.now(),
     });

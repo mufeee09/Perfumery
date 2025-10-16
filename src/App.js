@@ -26,8 +26,8 @@
 
 // export default App;
 
-
 import React, { useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react"; 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Products from "./components/Product";
@@ -39,12 +39,11 @@ import SocialIcons from "./components/SocialIcons";
 
 function App() {
   useEffect(() => {
-  const script = document.createElement("script");
-  script.src = "https://checkout.razorpay.com/v1/checkout.js";
-  script.async = true;
-  document.body.appendChild(script);
-}, []);
-
+    const script = document.createElement("script");
+    script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
 
   return (
     <>
@@ -56,6 +55,8 @@ function App() {
       <ContactForm />
       <SocialIcons />
       <Footer />
+
+      <Analytics />
     </>
   );
 }

@@ -1,9 +1,6 @@
-
+/* 
 .hero {
     height: 100vh;
-    /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
-                /* url('https://i.pinimg.com/474x/8f/21/be/8f21be31b54dcb27815d49054ddc65b1.jpg') center/cover;  #008080*/
-    /* background-image: url('OIP.jpeg'); */
     background-color: rgb(3, 171, 171);
     background-repeat: no-repeat;
     background-size: 100%;
@@ -31,7 +28,6 @@
 .cta-button {
     display: inline-block;
     padding: 1rem 2rem;
-    /* background: #0006b8; */
     background: #191970;
     color: white;
     text-decoration: none;
@@ -41,4 +37,228 @@
 
 .cta-button:hover {
     background: #0006b8;;
+} */
+
+
+/* Modern Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated background effect */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    animation: backgroundPulse 15s ease-in-out infinite;
+}
+
+@keyframes backgroundPulse {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+.hero-content {
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+.hero-content p {
+    font-size: 1.6rem;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0.95;
+    animation: fadeInUp 1s ease-out 0.4s backwards;
+}
+
+/* Modern CTA Button */
+.cta-button {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    background: linear-gradient(135deg, #191970 0%, #000080 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(25, 25, 112, 0.4);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:hover {
+    background: linear-gradient(135deg, #000080 0%, #0006b8 100%);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(25, 25, 112, 0.6);
+}
+
+.cta-button:active {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(25, 25, 112, 0.5);
+}
+
+/* Floating particles effect */
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px, 80px 80px;
+    background-position: 0 0, 40px 40px;
+    animation: floatingParticles 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes floatingParticles {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.4rem;
+    }
+
+    .cta-button {
+        padding: 1rem 2.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 100vh;
+    }
+
+    .hero-content {
+        padding: 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .cta-button {
+        padding: 0.9rem 2rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+        letter-spacing: 0;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.8rem;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .hero::before,
+    .hero::after,
+    .hero-content,
+    .hero-content h1,
+    .hero-content p,
+    .cta-button {
+        animation: none;
+    }
+
+    .cta-button::before {
+        display: none;
+    }
 }

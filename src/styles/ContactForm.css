@@ -1,4 +1,4 @@
-.form-container {
+/* .form-container {
     width: 100%;
     max-width: 450px;
     margin: 50px auto;
@@ -57,14 +57,12 @@
     background: #0056b3;
   }
   
-  /* Responsive Design */
   @media (max-width: 768px) {
     .form-container {
       max-width: 90%;
     }
   }
   
-  /* ContactForm.css */
 #button {
   background-color: #007bff;
   color: white;
@@ -83,7 +81,6 @@
   cursor: not-allowed;
 }
 
-/* Spinner Animation */
 .loader {
   width: 16px;
   height: 16px;
@@ -100,4 +97,308 @@
   100% {
     transform: rotate(360deg);
   }
+} */
+
+
+/* Modern Contact Form Container */
+.form-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 35px 32px;
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    box-shadow: 
+        0 15px 45px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(0, 0, 0, 0.04);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+/* Decorative gradient overlay */
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    border-radius: 20px 20px 0 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Field Styling */
+.field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #2c3e50;
+    letter-spacing: 0.3px;
+    transition: color 0.3s ease;
+}
+
+/* Input and Textarea Base Styles */
+input, textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e1e8ed;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    background: white;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #2c3e50;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #95a5a6;
+    font-weight: 400;
+}
+
+/* Focus States */
+.field input:focus,
+.field textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 
+        0 0 0 3px rgba(102, 126, 234, 0.12),
+        0 3px 10px rgba(102, 126, 234, 0.12);
+    transform: translateY(-1px);
+}
+
+.field:focus-within label {
+    color: #667eea;
+}
+
+/* Textarea Specific */
+textarea {
+    resize: vertical;
+    min-height: 110px;
+    max-height: 280px;
+    line-height: 1.5;
+}
+
+/* Submit Button */
+#button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 6px 18px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+#button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transition: left 0.5s ease;
+}
+
+#button:hover:not(:disabled) {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.35);
+}
+
+#button:hover:not(:disabled)::before {
+    left: 100%;
+}
+
+#button:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+#button:disabled {
+    background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: 0 3px 8px rgba(149, 165, 166, 0.25);
+}
+
+/* Success State */
+#button.sent {
+    background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+}
+
+/* Modern Spinner Animation */
+.loader {
+    width: 18px;
+    height: 18px;
+    border: 2.5px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-container {
+        max-width: 90%;
+        margin: 50px auto;
+        padding: 30px 26px;
+    }
+
+    form {
+        gap: 16px;
+    }
+
+    label {
+        font-size: 0.88rem;
+        margin-bottom: 5px;
+    }
+
+    input, textarea {
+        padding: 11px 14px;
+        font-size: 13.5px;
+    }
+
+    #button {
+        padding: 13px 24px;
+        font-size: 0.95rem;
+        margin-top: 6px;
+    }
+
+    textarea {
+        min-height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        max-width: 94%;
+        margin: 40px auto;
+        padding: 26px 20px;
+        border-radius: 18px;
+    }
+
+    form {
+        gap: 14px;
+    }
+
+    label {
+        font-size: 0.85rem;
+        margin-bottom: 5px;
+    }
+
+    input, textarea {
+        padding: 10px 13px;
+        font-size: 13px;
+        border-radius: 9px;
+    }
+
+    #button {
+        padding: 12px 22px;
+        font-size: 0.92rem;
+        letter-spacing: 0.8px;
+        margin-top: 4px;
+    }
+
+    textarea {
+        min-height: 95px;
+    }
+
+    .loader {
+        width: 16px;
+        height: 16px;
+        border-width: 2px;
+    }
+}
+
+/* Input validation styles */
+input:invalid:not(:placeholder-shown),
+textarea:invalid:not(:placeholder-shown) {
+    border-color: #e74c3c;
+}
+
+input:valid:not(:placeholder-shown),
+textarea:valid:not(:placeholder-shown) {
+    border-color: #27ae60;
+}
+
+/* Subtle hover effect on inputs */
+input:hover:not(:focus),
+textarea:hover:not(:focus) {
+    border-color: #cbd5e0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .form-container,
+    input,
+    textarea,
+    #button {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* Focus visible for keyboard navigation */
+input:focus-visible,
+textarea:focus-visible,
+#button:focus-visible {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Better visual hierarchy */
+.form-container {
+    box-shadow: 
+        0 10px 35px rgba(102, 126, 234, 0.08),
+        0 2px 8px rgba(0, 0, 0, 0.04),
+        0 0 0 1px rgba(102, 126, 234, 0.06);
 }

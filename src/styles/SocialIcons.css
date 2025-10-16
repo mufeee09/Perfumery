@@ -83,7 +83,7 @@
     }
   }
    */
-
+/* 
    .social-icons {
     display: flex;
     justify-content: center;
@@ -160,9 +160,8 @@
   /* .icon-content:hover .tooltip {
     opacity: 1;
     visibility: visible;
-  } */
+  } 
 
-/* Responsive */
 @media (max-width: 768px) {
     .social-icons {
         gap: 10px;
@@ -175,4 +174,295 @@
         width: 25px;
         height: 25px;
     }
+} */
+
+
+/* Modern Social Icons Container */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Individual Icon Container */
+.icon-content {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: visible;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover effect - Lift and scale */
+.icon-content:hover {
+    transform: translateY(-8px) scale(1.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Icon Link */
+.icon-content a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+/* Ripple effect on click */
+.icon-content a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.icon-content a:active::before {
+    width: 100%;
+    height: 100%;
+}
+
+/* Icon Images */
+.icon-content img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) invert(1);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.icon-content:hover img {
+    transform: rotate(360deg) scale(1.1);
+}
+
+/* Platform-specific backgrounds with gradients */
+.facebook-bg {
+    background: linear-gradient(135deg, #1877F2 0%, #0c63d4 100%);
+}
+
+.facebook-bg:hover {
+    background: linear-gradient(135deg, #0c63d4 0%, #1877F2 100%);
+}
+
+.instagram-bg {
+    background: linear-gradient(135deg, #f9ce34 0%, #ee2a7b 50%, #6228d7 100%);
+}
+
+.instagram-bg:hover {
+    background: linear-gradient(135deg, #6228d7 0%, #ee2a7b 50%, #f9ce34 100%);
+}
+
+.twitter-bg {
+    background: linear-gradient(135deg, #1DA1F2 0%, #0d8bd9 100%);
+}
+
+.twitter-bg:hover {
+    background: linear-gradient(135deg, #0d8bd9 0%, #1DA1F2 100%);
+}
+
+.whatsapp-bg {
+    background: linear-gradient(135deg, #25D366 0%, #1ebe57 100%);
+}
+
+.whatsapp-bg:hover {
+    background: linear-gradient(135deg, #1ebe57 0%, #25D366 100%);
+}
+
+/* Optional: Floating animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.icon-content {
+    animation: float 3s ease-in-out infinite;
+}
+
+.icon-content:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.icon-content:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.icon-content:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.icon-content:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+/* Active state */
+.icon-content:active {
+    transform: translateY(-4px) scale(1.05);
+}
+
+/* Tooltip (if you want to enable it) */
+.tooltip {
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: #fff;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #2c3e50;
+}
+
+.icon-content:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    bottom: -40px;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+    .social-icons {
+        gap: 18px;
+    }
+
+    .icon-content {
+        width: 56px;
+        height: 56px;
+    }
+
+    .icon-content img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .social-icons {
+        gap: 16px;
+        margin: 25px 0;
+    }
+
+    .icon-content {
+        width: 54px;
+        height: 54px;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .icon-content:hover {
+        transform: translateY(-6px) scale(1.08);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .icon-content img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .tooltip {
+        font-size: 11px;
+        padding: 5px 12px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .social-icons {
+        gap: 14px;
+        margin: 20px 0;
+    }
+
+    .icon-content {
+        width: 50px;
+        height: 50px;
+    }
+
+    .icon-content img {
+        width: 26px;
+        height: 26px;
+    }
+
+    .icon-content:hover {
+        transform: translateY(-5px) scale(1.06);
+    }
+}
+
+/* Accessibility - Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    .icon-content {
+        animation: none;
+    }
+
+    .icon-content:hover {
+        transform: scale(1.05);
+    }
+
+    .icon-content:hover img {
+        transform: scale(1.05);
+    }
+}
+
+/* Focus state for keyboard navigation */
+.icon-content a:focus-visible {
+    outline: 3px solid #667eea;
+    outline-offset: 4px;
+    border-radius: 50%;
+}
+
+/* Loading skeleton (optional) */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+.icon-content.loading {
+    animation: pulse 1.5s ease-in-out infinite;
 }

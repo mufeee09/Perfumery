@@ -1,4 +1,4 @@
-
+/* 
 .product-info {
     padding: 1.5rem;
 }
@@ -75,3 +75,185 @@
 .instagram {
     background:  radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
 } 
+     */
+
+
+     /* Product Card Component Styling */
+.product-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Product Image */
+.product-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.08);
+}
+
+/* Product Info Section */
+.product-info {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.product-info h3 {
+  font-size: 1.6rem;
+  color: #1a202c;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.product-info p {
+  color: #718096;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Price Info */
+.price-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #3399cc;
+  background: linear-gradient(135deg, #3399cc 0%, #2575a8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Pay Now Button */
+.order-btn {
+  width: 100%;
+  padding: 16px 24px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: auto;
+}
+
+.paynow {
+  background: linear-gradient(135deg, #3399cc 0%, #2575a8 100%);
+  color: white;
+  box-shadow: 0 6px 20px rgba(51, 153, 204, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.paynow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.paynow:hover::before {
+  left: 100%;
+}
+
+.paynow:hover {
+  background: linear-gradient(135deg, #2575a8 0%, #1a5a7f 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(51, 153, 204, 0.45);
+}
+
+.paynow:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(51, 153, 204, 0.35);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-card {
+    max-width: 100%;
+  }
+
+  .product-image {
+    height: 280px;
+  }
+
+  .product-info {
+    padding: 20px;
+  }
+
+  .product-info h3 {
+    font-size: 1.4rem;
+  }
+
+  .price {
+    font-size: 1.7rem;
+  }
+
+  .order-btn {
+    padding: 14px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-image {
+    height: 240px;
+  }
+
+  .product-info {
+    padding: 18px;
+    gap: 10px;
+  }
+
+  .product-info h3 {
+    font-size: 1.3rem;
+  }
+
+  .product-info p {
+    font-size: 0.9rem;
+  }
+
+  .price {
+    font-size: 1.5rem;
+  }
+
+  .order-btn {
+    padding: 12px 18px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+}

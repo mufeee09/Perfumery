@@ -270,6 +270,18 @@ const products = [
     description: "Fresh marine notes with citrus undertones",
     price: "89",
     image: img2,
+  },
+  {
+    name: "Midnight Rose",
+    description: "A seductive blend of dark rose and vanilla",
+    price: "129", // remove ₹ and make it number (Razorpay expects amount in paise)
+    image: img1,
+  },
+  {
+    name: "Ocean Breeze",
+    description: "Fresh marine notes with citrus undertones",
+    price: "89",
+    image: img2,
   }
 ];
 

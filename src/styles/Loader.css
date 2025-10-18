@@ -1,0 +1,146 @@
+/* Loader.css */
+
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Deep, rich, slightly violet background */
+    background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 50%, #16213e 100%); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999; 
+    transition: opacity 0.5s ease-out;
+    overflow: hidden;
+}
+
+/* ⭐ UPDATED: ESSENCE SPINNER CONTAINER ⭐ */
+.essence-spinner {
+    position: relative;
+    width: 160px; /* Slightly larger area */
+    height: 160px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slowRotate 25s linear infinite; /* Even slower ambient rotation */
+}
+
+/* Central light source / Core */
+.essence-spinner::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px #ffffff, 0 0 30px #ecb365;
+    z-index: 10;
+    animation: corePulse 3s ease-in-out infinite alternate;
+}
+
+/* The double-line unfurling element (Outer Track) */
+.unfurling-line {
+    width: 130px;
+    height: 130px;
+    transform: rotate(45deg); 
+    position: absolute;
+    animation: unfurlAndGlow 4s ease-in-out infinite; /* Main pulse animation */
+    
+    /* Creating the premium gradient border effect (Outer Line) */
+    border: 3px solid transparent; /* Thinner border */
+    border-radius: 16px;
+    background-image: linear-gradient(#1a1a2e, #1a1a2e), 
+                      linear-gradient(135deg, #ecb365 0%, #9f7aea 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    
+    filter: drop-shadow(0 0 8px rgba(236, 179, 101, 0.4));
+}
+
+/* Inner, independent track (asymmetry and sophistication) */
+.inner-line-track {
+    width: 90px;
+    height: 90px;
+    transform: rotate(-45deg); /* Rotates opposite to the outer line */
+    position: absolute;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background-image: linear-gradient(#1a1a2e, #1a1a2e), 
+                      linear-gradient(135deg, #9f7aea 0%, #ecb365 100%); /* Reverse gradient */
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    
+    filter: drop-shadow(0 0 5px rgba(159, 122, 234, 0.4));
+    animation: unfurlAndGlowReverse 4s ease-in-out infinite alternate;
+}
+
+/* The fast-moving 'essence' particle (The Unique Touch) */
+.essence-particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ecb365; /* Bright gold */
+    box-shadow: 0 0 5px #ecb365, 0 0 10px #ffffff;
+    
+    /* Animation: Particle travels around the outer track's path */
+    animation: trackFlow 4s linear infinite; 
+}
+
+.loading-text {
+    font-size: 1.8rem;
+    font-weight: 200; 
+    background: linear-gradient(90deg, #ffffff 0%, #ecb365 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 4px; 
+    text-transform: uppercase;
+    animation: textFlicker 5s ease-in-out infinite;
+}
+
+
+/* Keyframes */
+
+@keyframes slowRotate {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes corePulse {
+    0% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.9; }
+}
+
+/* Outer track animation (Scale/Pulse) */
+@keyframes unfurlAndGlow {
+    0% { transform: rotate(45deg) scale(0.7); opacity: 0.7; }
+    50% { transform: rotate(45deg) scale(1.0); opacity: 1; }
+    100% { transform: rotate(45deg) scale(0.7); opacity: 0.7; }
+}
+
+/* Inner track animation (Scale/Pulse - independent from outer) */
+@keyframes unfurlAndGlowReverse {
+    0% { transform: rotate(-45deg) scale(1.0); opacity: 1; }
+    50% { transform: rotate(-45deg) scale(0.7); opacity: 0.7; }
+    100% { transform: rotate(-45deg) scale(1.0); opacity: 1; }
+}
+
+/* Particle animation to trace the diamond path (complex) */
+@keyframes trackFlow {
+    0%    { transform: translate(-65px, -65px); } /* Top Left Corner */
+    25%   { transform: translate(65px, -65px); } /* Top Right Corner */
+    50%   { transform: translate(65px, 65px); }  /* Bottom Right Corner */
+    75%   { transform: translate(-65px, 65px); } /* Bottom Left Corner */
+    100%  { transform: translate(-65px, -65px); }
+}
+
+
+@keyframes textFlicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}

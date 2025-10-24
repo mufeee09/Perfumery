@@ -40,7 +40,7 @@
 } */
 
 /* Modern Luxury Perfume Hero Section */
-
+/* 
 .hero {
   position: relative;
   height: 100vh;
@@ -53,7 +53,6 @@
   overflow: hidden;
 }
 
-/* Animated background particles */
 .hero::before {
   content: '';
   position: absolute;
@@ -74,6 +73,306 @@
   width: 600px;
   height: 600px;
   background: radial-gradient(circle, rgba(159, 122, 234, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: floatParticle 25s ease-in-out infinite reverse;
+}
+
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-30px, 30px) scale(1.15);
+    opacity: 1;
+  }
+}
+
+.hero-content {
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  animation: fadeInScale 1s ease-out 0.2s backwards;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #ecb365 0%, #9f7aea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+
+.hero-content h1 strong {
+  font-weight: 700;
+  background: linear-gradient(135deg, #9f7aea 0%, #ecb365 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-content p {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  margin-bottom: 3rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.8;
+  animation: fadeInUp 1s ease-out 0.5s backwards;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 18px 48px;
+  background: linear-gradient(135deg, #ecb365 0%, #9f7aea 100%);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 12px 35px rgba(236, 179, 101, 0.3);
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  animation: fadeInUp 1s ease-out 0.7s backwards;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 50px rgba(236, 179, 101, 0.4);
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.cta-button:active {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(236, 179, 101, 0.3);
+}
+
+.cta-button:focus {
+  outline: 3px solid #ecb365;
+  outline-offset: 4px;
+  border-radius: 50px;
+}
+
+.hero-content::before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ecb365, transparent);
+  margin: 0 auto 2rem;
+  animation: fadeInScale 1s ease-out 0.4s backwards;
+}
+
+.hero-content::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #9f7aea, transparent);
+  margin: 2rem auto 0;
+  animation: fadeInScale 1s ease-out 0.6s backwards;
+}
+
+@media (max-width: 1024px) {
+  .hero-content h1 {
+    letter-spacing: 1px;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-content p {
+    margin-bottom: 2.5rem;
+  }
+
+  .cta-button {
+    padding: 16px 40px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 0;
+    min-height: 100vh;
+  }
+
+  .hero-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .hero-content h1 {
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.5px;
+  }
+
+  .cta-button {
+    padding: 14px 36px;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+  }
+
+  .hero-content::before,
+  .hero-content::after {
+    width: 40px;
+    height: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 1rem 0;
+    min-height: 100vh;
+  }
+
+  .hero-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.3px;
+  }
+
+  .cta-button {
+    padding: 12px 28px;
+    font-size: 0.9rem;
+    letter-spacing: 0.8px;
+    border-radius: 40px;
+  }
+
+  .hero-content::before,
+  .hero-content::after {
+    width: 30px;
+    height: 2px;
+    margin: 1rem auto;
+  }
+
+  .hero::before,
+  .hero::after {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before,
+  .hero::after,
+  .hero-content,
+  .hero-content h1,
+  .hero-content p,
+  .cta-button,
+  .hero-content::before,
+  .hero-content::after {
+    animation: none;
+  }
+
+  .cta-button::before {
+    display: none;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.hero-content:focus-within .cta-button {
+  box-shadow: 0 18px 50px rgba(236, 179, 101, 0.4);
+} */
+
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(135deg, #000428 0%, #004e92 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+/* Animated background particles */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(161, 196, 253, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: floatParticle 20s ease-in-out infinite;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(194, 233, 251, 0.08) 0%, transparent 70%);
   border-radius: 50%;
   animation: floatParticle 25s ease-in-out infinite reverse;
 }
@@ -127,7 +426,7 @@
   font-weight: 300;
   letter-spacing: 2px;
   line-height: 1.2;
-  background: linear-gradient(135deg, #ecb365 0%, #9f7aea 100%);
+  background: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -136,7 +435,7 @@
 
 .hero-content h1 strong {
   font-weight: 700;
-  background: linear-gradient(135deg, #9f7aea 0%, #ecb365 100%);
+  background: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -157,8 +456,8 @@
 .cta-button {
   display: inline-block;
   padding: 18px 48px;
-  background: linear-gradient(135deg, #ecb365 0%, #9f7aea 100%);
-  color: #ffffff;
+  background: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%);
+  color: #000428;
   text-decoration: none;
   border-radius: 50px;
   font-size: 1.1rem;
@@ -166,7 +465,7 @@
   letter-spacing: 1.5px;
   text-transform: uppercase;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 12px 35px rgba(236, 179, 101, 0.3);
+  box-shadow: 0 12px 35px rgba(161, 196, 253, 0.3);
   position: relative;
   overflow: hidden;
   border: none;
@@ -188,7 +487,7 @@
 
 .cta-button:hover {
   transform: translateY(-5px);
-  box-shadow: 0 18px 50px rgba(236, 179, 101, 0.4);
+  box-shadow: 0 18px 50px rgba(161, 196, 253, 0.5);
 }
 
 .cta-button:hover::before {
@@ -197,12 +496,12 @@
 
 .cta-button:active {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(236, 179, 101, 0.3);
+  box-shadow: 0 10px 30px rgba(161, 196, 253, 0.3);
 }
 
 /* Focus state for accessibility */
 .cta-button:focus {
-  outline: 3px solid #ecb365;
+  outline: 3px solid #a1c4fd;
   outline-offset: 4px;
   border-radius: 50px;
 }
@@ -213,7 +512,7 @@
   display: block;
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, transparent, #ecb365, transparent);
+  background: linear-gradient(90deg, transparent, #a1c4fd, transparent);
   margin: 0 auto 2rem;
   animation: fadeInScale 1s ease-out 0.4s backwards;
 }
@@ -223,7 +522,7 @@
   display: block;
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, transparent, #9f7aea, transparent);
+  background: linear-gradient(90deg, transparent, #c2e9fb, transparent);
   margin: 2rem auto 0;
   animation: fadeInScale 1s ease-out 0.6s backwards;
 }
@@ -347,5 +646,5 @@
 
 /* Focus within for keyboard navigation */
 .hero-content:focus-within .cta-button {
-  box-shadow: 0 18px 50px rgba(236, 179, 101, 0.4);
+  box-shadow: 0 18px 50px rgba(161, 196, 253, 0.5);
 }

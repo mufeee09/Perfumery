@@ -92,7 +92,7 @@ const Loader = () => (
       <div className="essence-particle"></div> 
 
     </div>
-    <div className="loading-text">ROLSCHE VENTON</div>
+    <div className="loading-text"><strong>ROLSCHE VENTON</strong></div>
   </div>
 );
 
@@ -119,9 +119,9 @@ function App() {
       ) : (
         <>
           <Navbar />
+          <About />
           <Hero />
           <Products />
-          <About />
           <Contact />
           <ContactForm />
           <SocialIcons />

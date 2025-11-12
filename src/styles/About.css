@@ -809,6 +809,7 @@
 
 .about-label {
   display: inline-block;
+  margin-top: 20px;
   padding: 12px 28px;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.9));
   border: 2px solid rgba(255, 255, 255, 0.4);

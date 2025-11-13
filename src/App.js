@@ -120,7 +120,7 @@ function App() {
         <>
           <Navbar />
           <About />
-          <Hero />
+          {/* <Hero /> */}
           <Products />
           <Contact />
           <ContactForm />
@@ -135,3 +135,8 @@ function App() {
 }
 
 export default App;
+
+
+// our story
+// images
+// our collection

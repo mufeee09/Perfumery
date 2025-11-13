@@ -67,7 +67,7 @@
 import React, { useEffect, useState } from "react";
 import { Analytics } from "@vercel/analytics/react"; 
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+// import Hero from "./components/Hero";
 import Products from "./components/Product";
 import About from "./components/About";
 import Contact from "./components/Contact";

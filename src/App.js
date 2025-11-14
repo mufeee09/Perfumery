@@ -123,7 +123,7 @@ function App() {
           <About />
           {/* <Hero /> */}
           <Products />
-          <div style={{ width: '99vw', height: '100vh' }}>
+          <div style={{ width: '99vw', height: '75vh' }}>
             <DomeGallery />
           </div>
           <Contact />

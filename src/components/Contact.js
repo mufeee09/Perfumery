@@ -58,8 +58,8 @@ function Contact() {
               <FontAwesomeIcon icon={faEnvelope} className="contact-icon" />
             </div>
             <h3 className="contact-card-title">Email Us</h3>
-            <a href="mailto:rolscheventon.official@gmail.com" className="contact-link">
-              rolscheventon.official@gmail.com
+            <a href="mailto:atrabaromatics00@gmail.com" className="contact-link">
+              atrabaromatics00@gmail.com
             </a>
             <p className="contact-card-text">We'll respond within 24 hours</p>
           </div>

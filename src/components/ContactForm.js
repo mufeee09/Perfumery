@@ -320,7 +320,7 @@ const ContactForm = () => {
     from_name: "",
     from_phone: "",
     from_email: "",
-    to_email: "rolscheventon.official@gmail.com",
+    to_email: "atrabaromatics00@gmail.com",
     message: "",
   });
 

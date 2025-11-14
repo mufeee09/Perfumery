@@ -370,6 +370,45 @@
   animation: particleFloat 20s ease-in-out infinite;
 }
 
+.about-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;          /* overlap by 1px to avoid a single-pixel line */
+  height: 80px;          /* adjust if needed (40–120px) */
+  pointer-events: none;
+  z-index: 2;
+
+  /* blend between the About bottom color and the Products top color
+     You used #3a3a3a (dark) and #b5b5b5 (light) in your code; this overlay
+     gently blurs the boundary without changing either section's gradient. */
+  background: linear-gradient(
+    to bottom,
+    rgba(181,181,181,0) 0%,
+    rgba(181,181,181,0.35) 45%,
+    rgba(181,181,181,0.55) 60%,
+    rgba(181,181,181,0.0) 100%
+  );
+  mix-blend-mode: normal;
+  filter: blur(2px);
+}
+
+.products::before,
+.about-section::before {
+  z-index: 0; /* both particle layers sit behind section content */
+}
+
+/* Make sure core content remains above overlays */
+.about-section .about-hero,
+.features-container,
+.products .field,
+.products .product-grid {
+  position: relative;
+  z-index: 1;
+}
+
+
 @keyframes particleFloat {
   0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
   50% { transform: translate(20px, -20px) scale(1.1); opacity: 1; }
@@ -441,7 +480,8 @@
 .features-container {
   position: relative;
   padding: 80px 24px 120px;
-  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+  /* background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.1) 100%); */
+background: transparent !important;
 }
 
 .features-grid {
@@ -463,10 +503,10 @@
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
   animation: fadeInUp 0.8s ease-out backwards;
-  box-shadow: 
-    0 15px 35px rgba(0, 0, 0, 0.25),
-    0 0 20px rgba(255, 255, 255, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+   box-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.16),    /* softer darker shadow */
+    0 0 14px rgba(255, 255, 255, 0.28),  /* keep the glow */
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .feature-card:nth-child(1) { animation-delay: 0.5s; }

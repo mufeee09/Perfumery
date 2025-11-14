@@ -65,7 +65,7 @@
 
 
 import React, { useEffect, useState } from "react";
-import { Analytics } from "@vercel/analytics/react"; 
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "./components/Navbar";
 // import Hero from "./components/Hero";
 import Products from "./components/Product";
@@ -73,7 +73,8 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ContactForm from "./components/ContactForm";
-import SocialIcons from "./components/SocialIcons";
+import DomeGallery from "./components/Gallery";
+// import SocialIcons from "./components/SocialIcons";
 import './styles/Loader.css'; // Import Loader CSS
 
 // Component for the Loading Screen
@@ -81,15 +82,15 @@ const Loader = () => (
   <div className="loader-container">
     <div className="essence-spinner"> {/* The large rotating container */}
       {/* Central glow is now handled by ::before on .essence-spinner */}
-      
+
       {/* Outer, main track */}
-      <div className="unfurling-line"></div> 
-      
+      <div className="unfurling-line"></div>
+
       {/* Inner, counter-rotating track */}
       <div className="inner-line-track"></div>
-      
+
       {/* Fast-moving gold dot */}
-      <div className="essence-particle"></div> 
+      <div className="essence-particle"></div>
 
     </div>
     <div className="loading-text"><strong>ROLSCHE VENTON</strong></div>
@@ -107,7 +108,7 @@ function App() {
 
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); 
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -122,9 +123,12 @@ function App() {
           <About />
           {/* <Hero /> */}
           <Products />
+          <div style={{ width: '99vw', height: '100vh' }}>
+            <DomeGallery />
+          </div>
           <Contact />
           <ContactForm />
-          <SocialIcons />
+          {/* <SocialIcons /> */}
           <Footer />
         </>
       )}

@@ -48,7 +48,7 @@ function Footer() {
     <footer>
       <SocialIcons />
       <div className="footer-brand">
-        <span className="footer-span">ROLSCHEVENTON</span>
+        <span className="footer-span">ATRAB AROMATICS</span>
         <div className="decorative-line"></div>
       </div>
       <p className="footer-tagline">

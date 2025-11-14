@@ -997,7 +997,7 @@ nav.scrolled {
 .brand h1 {
     font-size: 1.6rem;
     font-weight: 700;
-    background: linear-gradient(90deg, #3a3a3a 0%, #b5b5b5 80%);
+    background: linear-gradient(90deg, #3a3a3a 0%, #b5b5b5 150%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1047,7 +1047,7 @@ nav.scrolled .brand h1 {
 }
 
 .nav-item a:hover {
-    color: #b5b5b5;
+    color: #929191;
 }
 
 .nav-item a:hover::before {

@@ -190,7 +190,7 @@
 
 import React, { useEffect, useState } from "react";
 import '../styles/Navbar.css';
-import img1 from '../Logo/ROLSCHE VENTON Logo.jpg';
+import img1 from '../images/1000211810-removebg-preview.png';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -256,7 +256,7 @@ function Navbar() {
           <figure>
             <img className="logo" src={img1} alt="Rolsche Venton Logo" />
           </figure>
-          <h1>ROLSCHE VENTON</h1>
+          <h1>ATRAB AROMATICS</h1>
         </div>
 
         {/* Hamburger Menu Button */}

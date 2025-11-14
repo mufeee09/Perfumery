@@ -93,7 +93,7 @@ const Loader = () => (
       <div className="essence-particle"></div>
 
     </div>
-    <div className="loading-text"><strong>ROLSCHE VENTON</strong></div>
+    <div className="loading-text"><strong>ATRAB AROMATICS</strong></div>
   </div>
 );
 

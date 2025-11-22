@@ -257,7 +257,7 @@
 
 
 /* Dark Top & Light Bottom*/
-.loader-container {
+/* .loader-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -379,4 +379,152 @@
 @keyframes textFlicker {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.85; }
+} */
+
+
+
+/* Dark Top & Light Bottom*/
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #3a3a3a 0%, #b5b5b5 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    transition: opacity 0.5s ease-out;
+    overflow: hidden;
+}
+
+.essence-spinner {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slowRotate 25s linear infinite;
+}
+
+.essence-spinner::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    animation: corePulse 3s ease-in-out infinite alternate;
+}
+
+.unfurling-line {
+    width: 130px;
+    height: 130px;
+    transform: rotate(45deg);
+    position: absolute;
+    animation: unfurlAndGlow 4s ease-in-out infinite;
+    border: 3px solid transparent;
+    border-radius: 16px;
+    background-image: linear-gradient(#b5b5b5, #b5b5b5),
+                      linear-gradient(135deg, #000 0%, #000 50%, #000 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+}
+
+.inner-line-track {
+    width: 90px;
+    height: 90px;
+    transform: rotate(-45deg);
+    position: absolute;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background-image: linear-gradient(#b5b5b5, #b5b5b5),
+                      linear-gradient(135deg, #000 0%, #000 50%, #000 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.3));
+    animation: unfurlAndGlowReverse 4s ease-in-out infinite alternate;
+}
+
+.essence-particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #000;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8), 0 0 16px rgba(0, 0, 0, 0.5);
+    animation: trackFlow 4s linear infinite;
+}
+
+.loading-text {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #000;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    animation: textFlicker 5s ease-in-out infinite;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.loading-progress {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: 600;
+    letter-spacing: 2px;
+    opacity: 0.8;
+    animation: textFlicker 5s ease-in-out infinite;
+}
+
+@keyframes slowRotate {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes corePulse {
+    0% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.9; }
+}
+
+@keyframes unfurlAndGlow {
+    0% { transform: rotate(45deg) scale(0.7); opacity: 0.7; }
+    50% { transform: rotate(45deg) scale(1.0); opacity: 1; }
+    100% { transform: rotate(45deg) scale(0.7); opacity: 0.7; }
+}
+
+@keyframes unfurlAndGlowReverse {
+    0% { transform: rotate(-45deg) scale(1.0); opacity: 1; }
+    50% { transform: rotate(-45deg) scale(0.7); opacity: 0.7; }
+    100% { transform: rotate(-45deg) scale(1.0); opacity: 1; }
+}
+
+@keyframes trackFlow {
+    0%    { transform: translate(-65px, -65px); }
+    25%   { transform: translate(65px, -65px); }
+    50%   { transform: translate(65px, 65px); }
+    75%   { transform: translate(-65px, 65px); }
+    100%  { transform: translate(-65px, -65px); }
+}
+
+@keyframes textFlicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.85; }
+}
+
+@media (max-width: 768px) {
+    .loading-text {
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+    }
+    
+    .loading-progress {
+        font-size: 1rem;
+    }
 }

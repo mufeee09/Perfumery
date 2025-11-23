@@ -292,17 +292,17 @@ import './styles/Loader.css';
 // Import all product images
 import img1 from "./images/641460.webp";
 import img2 from "./images/OIP.webp";
-import img3 from "./images/pexels-valeriya-965993.webp";
-import img4 from "./images/pexels-valeriya-2.webp";
+import img3 from "./images/pexels-valeriya-965993-transformed.webp";
+import img4 from "./images/pexels-valeriya-2-transformed.webp";
 
 // Import all gallery images
 import galleryImg1 from "./images/641460.webp";
 import galleryImg2 from "./images/OIP.webp";
-import galleryImg3 from "./images/pexels-valeriya-965993.webp";
-import galleryImg4 from "./images/pexels-valeriya-2.webp";
-import galleryImg5 from "./images/pexels-valeriya-3.webp";
-import galleryImg6 from "./images/pexels-xanainai-4.webp";
-import galleryImg7 from "./images/pexels-karola-g-5.webp";
+import galleryImg3 from "./images/pexels-valeriya-965993-transformed.webp";
+import galleryImg4 from "./images/pexels-valeriya-2-transformed.webp";
+import galleryImg5 from "./images/pexels-valeriya-3-transformed.webp";
+import galleryImg6 from "./images/pexels-xanainai-4-transformed.webp";
+import galleryImg7 from "./images/pexels-karola-g-5-transformed.webp";
 
 // Component for the Loading Screen
 const Loader = ({ progress }) => (

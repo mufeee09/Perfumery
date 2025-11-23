@@ -62,7 +62,7 @@
 //         e.preventDefault();
 //         const targetId = link.getAttribute("href").substring(1);
 //         const targetElement = document.getElementById(targetId);
-        
+
 //         if (targetElement) {
 //           targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
 //         }
@@ -130,7 +130,7 @@
 //       e.preventDefault();
 //       const targetId = e.currentTarget.getAttribute("href").substring(1);
 //       const targetElement = document.getElementById(targetId);
-      
+
 //       if (targetElement) {
 //         targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
 //         setIsMenuOpen(false); // Close mobile menu after clicking
@@ -190,7 +190,7 @@
 
 import React, { useEffect, useState } from "react";
 import '../styles/Navbar.css';
-import img1 from '../images/1000211810-removebg-preview.png';
+import img1 from '../images/1000211810-removebg-preview.webp';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -217,7 +217,7 @@ function Navbar() {
       e.preventDefault();
       const targetId = e.currentTarget.getAttribute("href").substring(1);
       const targetElement = document.getElementById(targetId);
-      
+
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
         setIsMenuOpen(false); // Close mobile menu after clicking
@@ -254,13 +254,19 @@ function Navbar() {
       <div className="nav-content">
         <div className="brand">
           <figure>
-            <img className="logo" src={img1} alt="Rolsche Venton Logo" />
+            {/* Added loading="lazy" below */}
+            <img
+              className="logo"
+              src={img1}
+              alt="Rolsche Venton Logo"
+              loading="lazy"
+            />
           </figure>
           <h1>ATRAB AROMATICS</h1>
         </div>
 
         {/* Hamburger Menu Button */}
-        <button 
+        <button
           className={`hamburger ${isMenuOpen ? 'active' : ''}`}
           onClick={toggleMenu}
           aria-label="Toggle menu"
@@ -272,7 +278,7 @@ function Navbar() {
 
         {/* Navigation Links */}
         <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-          <li className="nav-item"><a href="#home">Home</a></li>
+          <li className="nav-item"><a href="#about">Home</a></li>
           <li className="nav-item"><a href="#products">Products</a></li>
           <li className="nav-item"><a href="#about">About</a></li>
           <li className="nav-item"><a href="#contact">Contact</a></li>

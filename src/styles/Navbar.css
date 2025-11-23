@@ -985,13 +985,23 @@ nav.scrolled {
     border-radius: 50%;
     object-fit: cover;
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    box-shadow: 0 4px 15px rgba(58, 58, 58, 0.3);
-    border: 2px solid rgba(58, 58, 58, 0.2);
+    border: 2px solid rgba(58, 58, 58, 0.4);
+
+    /* CHANGE SHADOW HERE */
+    /* Format: offset-x | offset-y | blur-radius | color (with opacity) */
+    
+    /* OLD: box-shadow: 0 8px 15px rgba(58, 58, 58, 0.3); */
+    
+    /* NEW (Stronger): Higher Y-offset (12px), more blur (20px), darker opacity (0.5) */
+    box-shadow: 0 20px 20px rgba(58, 58, 58, 0.9); 
 }
 
 .logo:hover {
-    box-shadow: 0 6px 25px rgba(58, 58, 58, 0.5);
     border-color: rgba(58, 58, 58, 0.4);
+    
+    /* HOVER SHADOW */
+    /* Made this even "higher" so it looks like it lifts up */
+    box-shadow: 0 15px 30px rgba(58, 58, 58, 0.6);
 }
 
 .brand h1 {

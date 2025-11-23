@@ -311,66 +311,454 @@
 // export default ContactForm;
 
 
-import React, { useState } from "react";
-import emailjs from "@emailjs/browser"; // Import EmailJS
-import "../styles/ContactForm.css"; // Import CSS
+// import React, { useState } from "react";
+// import emailjs from "@emailjs/browser"; // Import EmailJS
+// import "../styles/ContactForm.css"; // Import CSS
+
+// const ContactForm = () => {
+//   const [formData, setFormData] = useState({
+//     from_name: "",
+//     from_phone: "",
+//     from_email: "",
+//     to_email: "atrabaromatics00@gmail.com",
+//     message: "",
+//   });
+
+//   const [isSent, setIsSent] = useState(false);
+//   const [isLoading, setIsLoading] = useState(false);
+
+//   const handleChange = (e) => {
+//     setFormData({ ...formData, [e.target.name]: e.target.value });
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+
+//     const email = formData.from_email;
+//     const today = new Date().toDateString(); // Get today's date as a string
+
+//     // Check localStorage for existing email and date
+//     const storedData = JSON.parse(localStorage.getItem("email_sent_data")) || {};
+
+//     if (storedData[email] === today) {
+//       alert("You have already sent a message today. Try again tomorrow.");
+      
+//       // Reset the form fields after alert
+//       setFormData({ from_name: "", from_phone: "", from_email: "", message: "" });
+//       return;
+//     }
+
+//     setIsLoading(true); // Show loading animation
+
+//     emailjs
+//       .send(
+//         "service_uuax7cw", // Replace with your EmailJS Service ID
+//         "template_htc2pkf", // Replace with your EmailJS Template ID
+//         {
+//           from_name: formData.from_name,
+//           from_phone: formData.from_phone,
+//           from_email: formData.from_email,
+//           to_email: formData.to_email,
+//           message: formData.message,
+//         },
+//         "4YJ6pzR07Jxjvkc7H" // Replace with your EmailJS Public Key
+//       )
+//       .then(
+//         (response) => {
+//           console.log("SUCCESS!", response.status, response.text);
+//           alert("Message Sent Successfully!");
+//           setIsSent(true);
+//           setIsLoading(false);
+
+//           // Store email in localStorage with today's date
+//           localStorage.setItem(
+//             "email_sent_data",
+//             JSON.stringify({ ...storedData, [email]: today })
+//           );
+
+//           setFormData({ from_name: "", from_phone: "", from_email: "", message: "" });
+//         },
+//         (error) => {
+//           console.log("FAILED...", error);
+//           alert("Failed to send message. Try again!");
+//           setIsLoading(false);
+//         }
+//       );
+//   };
+
+//   return (
+//     <div className="form-container">
+//       <form id="form" onSubmit={handleSubmit}>
+//         <div className="field">
+//           <label htmlFor="from_name">Name</label>
+//           <input
+//             type="text"
+//             name="from_name"
+//             id="from_name"
+//             placeholder="Enter Your Name"
+//             value={formData.from_name}
+//             onChange={handleChange}
+//             required
+//           />
+//         </div>
+//         <div className="field">
+//           <label htmlFor="from_phone">Phone</label>
+//           <input
+//             type="tel"
+//             name="from_phone"
+//             id="from_phone"
+//             placeholder="Enter Your Phone Number"
+//             value={formData.from_phone}
+//             onChange={handleChange}
+//             pattern="[0-9]{10,15}"
+//             title="Please enter a valid phone number (10-15 digits)"
+//             required
+//           />
+//         </div>
+//         <div className="field">
+//           <label htmlFor="from_email">Email</label>
+//           <input
+//             type="email"
+//             name="from_email"
+//             id="from_email"
+//             placeholder="Enter Your Email"
+//             value={formData.from_email}
+//             onChange={handleChange}
+//             required
+//           />
+//         </div>
+//         <div className="field">
+//           <label htmlFor="message">Query/Comments</label>
+//           <textarea
+//             name="message"
+//             id="message"
+//             placeholder="Enter Your Comments Here..."
+//             value={formData.message}
+//             onChange={handleChange}
+//             required
+//           ></textarea>
+//         </div>
+
+//         <button type="submit" id="button" disabled={isLoading}>
+//           {isLoading ? <span className="loader"></span> : isSent ? "Sent" : "Send"}
+//         </button>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default ContactForm;
+
+
+
+// import React, { useState } from "react";
+// import emailjs from "@emailjs/browser";
+// import "../styles/ContactForm.css";
+
+// const ContactForm = () => {
+//   const [formData, setFormData] = useState({
+//     from_name: "",
+//     from_phone: "",
+//     from_email: "",
+//     to_email: "atrabaromatics00@gmail.com",
+//     message: "",
+//   });
+
+//   const [isSent, setIsSent] = useState(false);
+//   const [isLoading, setIsLoading] = useState(false);
+
+//   const handleChange = (e) => {
+//     setFormData({ ...formData, [e.target.name]: e.target.value });
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+
+//     const email = formData.from_email;
+//     const today = new Date().toDateString();
+
+//     const storedData = JSON.parse(localStorage.getItem("email_sent_data")) || {};
+
+//     if (storedData[email] === today) {
+//       alert("You have already sent a message today. Try again tomorrow.");
+//       setFormData({ from_name: "", from_phone: "", from_email: "", message: "" });
+//       return;
+//     }
+
+//     setIsLoading(true);
+
+//     emailjs
+//       .send(
+//         "service_uuax7cw", 
+//         "template_htc2pkf", 
+//         {
+//           from_name: formData.from_name,
+//           from_phone: formData.from_phone,
+//           from_email: formData.from_email,
+//           to_email: formData.to_email,
+//           message: formData.message,
+//         },
+//         "4YJ6pzR07Jxjvkc7H" 
+//       )
+//       .then(
+//         (response) => {
+//           console.log("SUCCESS!", response.status, response.text);
+//           alert("Message Sent Successfully!");
+//           setIsSent(true);
+//           setIsLoading(false);
+
+//           localStorage.setItem(
+//             "email_sent_data",
+//             JSON.stringify({ ...storedData, [email]: today })
+//           );
+
+//           setFormData({ from_name: "", from_phone: "", from_email: "", message: "" });
+//         },
+//         (error) => {
+//           console.log("FAILED...", error);
+//           alert("Failed to send message. Try again!");
+//           setIsLoading(false);
+//         }
+//       );
+//   };
+
+//   return (
+//     <div className="form-container">
+//       <form id="form" onSubmit={handleSubmit}>
+//         <div className="field">
+//           <label htmlFor="from_name">Name</label>
+//           <input
+//             type="text"
+//             name="from_name"
+//             id="from_name"
+//             placeholder="Enter Your Name"
+//             value={formData.from_name}
+//             onChange={handleChange}
+//             required
+//           />
+//         </div>
+//         <div className="field">
+//           <label htmlFor="from_phone">Phone</label>
+//           <input
+//             type="tel"
+//             name="from_phone"
+//             id="from_phone"
+//             placeholder="Enter Your Phone Number"
+//             value={formData.from_phone}
+//             onChange={handleChange}
+//             pattern="[0-9]{10,15}"
+//             title="Please enter a valid phone number (10-15 digits)"
+//             required
+//           />
+//         </div>
+//         <div className="field">
+//           <label htmlFor="from_email">Email</label>
+//           <input
+//             type="email"
+//             name="from_email"
+//             id="from_email"
+//             placeholder="Enter Your Email"
+//             value={formData.from_email}
+//             onChange={handleChange}
+//             required
+//           />
+//         </div>
+//         <div className="field">
+//           <label htmlFor="message">Query/Comments</label>
+//           <textarea
+//             name="message"
+//             id="message"
+//             placeholder="Enter Your Comments Here..."
+//             value={formData.message}
+//             onChange={handleChange}
+//             required
+//           ></textarea>
+//         </div>
+
+//         <button type="submit" id="button" disabled={isLoading}>
+//           {isLoading ? <span className="loader"></span> : isSent ? "Sent" : "Send"}
+//         </button>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default ContactForm;
+
+
+
+// import React, { useState } from "react";
+// import "../styles/ContactForm.css";
+
+// const ContactForm = () => {
+//   const [formData, setFormData] = useState({
+//     from_name: "",
+//     from_email: "",
+//     from_phone: "",
+//     comments: "",
+//   });
+
+//   const recipientEmail = "mmufeed493@gmail.com";
+
+//   const handleChange = (e) => {
+//     setFormData({ ...formData, [e.target.name]: e.target.value });
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+
+//     const { from_name, from_email, from_phone, comments } = formData;
+
+//     const subject = encodeURIComponent(`Inquiry from ${from_name}`);
+    
+//     const body = encodeURIComponent(
+//       `Name: ${from_name}\r\n` +
+//       `Phone: ${from_phone}\r\n` +
+//       `Email: ${from_email}\r\n\r\n` +
+//       `Message:\r\n${comments}`
+//     );
+
+//     window.location.href = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
+
+//     setFormData({ from_name: "", from_email: "", from_phone: "", comments: "" });
+//   };
+
+//   return (
+//     <div className="form-container">
+//       <form id="form" onSubmit={handleSubmit}>
+//         <div className="field">
+//           <label htmlFor="from_name">Name</label>
+//           <input
+//             type="text"
+//             name="from_name"
+//             id="from_name"
+//             placeholder="Enter Your Name"
+//             value={formData.from_name}
+//             onChange={handleChange}
+//             required
+//           />
+//         </div>
+
+//         <div className="field">
+//           <label htmlFor="from_phone">Phone</label>
+//           <input
+//             type="tel"
+//             name="from_phone"
+//             id="from_phone"
+//             placeholder="Enter Your Phone Number"
+//             value={formData.from_phone}
+//             onChange={handleChange}
+//           />
+//         </div>
+
+//         <div className="field">
+//           <label htmlFor="from_email">Email</label>
+//           <input
+//             type="email"
+//             name="from_email"
+//             id="from_email"
+//             placeholder="Enter Your Email"
+//             value={formData.from_email}
+//             onChange={handleChange}
+//             required
+//           />
+//         </div>
+
+//         <div className="field">
+//           <label htmlFor="comments">Query/Comments</label>
+//           <textarea
+//             name="comments"
+//             id="comments"
+//             placeholder="Enter Your Comments Here..."
+//             value={formData.comments}
+//             onChange={handleChange}
+//             required
+//           ></textarea>
+//         </div>
+
+//         <button type="submit" id="button">
+//           SEND
+//         </button>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default ContactForm;
+
+
+
+import React, { useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
+import "../styles/ContactForm.css";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     from_name: "",
-    from_phone: "",
+    from_phone: "", // Added Phone field
     from_email: "",
-    to_email: "atrabaromatics00@gmail.com",
+    to_email: "mmufeed493@gmail.com",
     message: "",
   });
 
-  const [isSent, setIsSent] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [toast, setToast] = useState({ show: false, message: "", type: "" });
+
+  // Toast timer logic
+  useEffect(() => {
+    if (toast.show) {
+      const timer = setTimeout(() => {
+        setToast({ ...toast, show: false });
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [toast]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const showToastMessage = (message, type) => {
+    setToast({ show: true, message, type });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const email = formData.from_email;
-    const today = new Date().toDateString(); // Get today's date as a string
+    const today = new Date().toDateString();
 
-    // Check localStorage for existing email and date
+    // Check localStorage to prevent spamming
     const storedData = JSON.parse(localStorage.getItem("email_sent_data")) || {};
 
     if (storedData[email] === today) {
-      alert("You have already sent a message today. Try again tomorrow.");
-      
-      // Reset the form fields after alert
+      showToastMessage("You have already sent a message today.", "error");
       setFormData({ from_name: "", from_phone: "", from_email: "", message: "" });
       return;
     }
 
-    setIsLoading(true); // Show loading animation
+    setIsLoading(true);
 
+    // SEND DIRECTLY VIA EMAILJS
     emailjs
       .send(
-        "service_uuax7cw", // Replace with your EmailJS Service ID
-        "template_htc2pkf", // Replace with your EmailJS Template ID
+        "service_24s79q8", // Your Service ID
+        "template_3hm6yqb", // Your Template ID
         {
           from_name: formData.from_name,
-          from_phone: formData.from_phone,
+          from_phone: formData.from_phone, // Sending Phone Number
           from_email: formData.from_email,
           to_email: formData.to_email,
           message: formData.message,
         },
-        "4YJ6pzR07Jxjvkc7H" // Replace with your EmailJS Public Key
+        "Q3GwIc419Yy5t5wGs" // Your Public Key
       )
       .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
-          alert("Message Sent Successfully!");
-          setIsSent(true);
+        () => {
+          showToastMessage("Message Sent Successfully!", "success");
           setIsLoading(false);
 
-          // Store email in localStorage with today's date
+          // Save to localStorage
           localStorage.setItem(
             "email_sent_data",
             JSON.stringify({ ...storedData, [email]: today })
@@ -379,8 +767,8 @@ const ContactForm = () => {
           setFormData({ from_name: "", from_phone: "", from_email: "", message: "" });
         },
         (error) => {
-          console.log("FAILED...", error);
-          alert("Failed to send message. Try again!");
+          console.error(error);
+          showToastMessage("Failed to send message. Try again!", "error");
           setIsLoading(false);
         }
       );
@@ -389,6 +777,8 @@ const ContactForm = () => {
   return (
     <div className="form-container">
       <form id="form" onSubmit={handleSubmit}>
+        
+        {/* NAME */}
         <div className="field">
           <label htmlFor="from_name">Name</label>
           <input
@@ -401,6 +791,8 @@ const ContactForm = () => {
             required
           />
         </div>
+
+        {/* PHONE */}
         <div className="field">
           <label htmlFor="from_phone">Phone</label>
           <input
@@ -411,10 +803,10 @@ const ContactForm = () => {
             value={formData.from_phone}
             onChange={handleChange}
             pattern="[0-9]{10,15}"
-            title="Please enter a valid phone number (10-15 digits)"
-            required
           />
         </div>
+
+        {/* EMAIL */}
         <div className="field">
           <label htmlFor="from_email">Email</label>
           <input
@@ -427,6 +819,8 @@ const ContactForm = () => {
             required
           />
         </div>
+
+        {/* COMMENTS */}
         <div className="field">
           <label htmlFor="message">Query/Comments</label>
           <textarea
@@ -440,14 +834,20 @@ const ContactForm = () => {
         </div>
 
         <button type="submit" id="button" disabled={isLoading}>
-          {isLoading ? <span className="loader"></span> : isSent ? "Sent" : "Send"}
+          {isLoading ? <span className="loader"></span> : "SEND MESSAGE"}
         </button>
       </form>
+
+      {/* TOAST MESSAGE */}
+      <div className={`toast-notification ${toast.show ? "show" : ""} ${toast.type}`}>
+        {toast.message}
+      </div>
     </div>
   );
 };
 
 export default ContactForm;
+
 
 //MAILTO METHOD
 // import React, { useState } from "react";

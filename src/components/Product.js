@@ -1409,8 +1409,8 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 import "../styles/Product.css";
 import img1 from "../images/641460.webp";
 import img2 from "../images/OIP.webp";
-import img3 from "../images/pexels-valeriya-965993.webp";
-import img4 from "../images/pexels-valeriya-2.webp";
+import img3 from "../images/pexels-valeriya-965993-transformed.webp";
+import img4 from "../images/pexels-valeriya-2-transformed.webp";
 
 // === PRODUCT DATA STRUCTURE ===
 const products = [
@@ -1432,36 +1432,36 @@ const products = [
       { label: "50ml", price: "149" },
     ],
   },
-  {
-    name: "Amber Noir",
-    description: "Warm amber essence with woody undertones",
-    images: [img3, img1],
-    volumeOptions: [{ label: "30ml", price: "119" }],
-  },
-  {
-    name: "Midnight Rose (v2)",
-    description: "A seductive blend of dark rose and vanilla",
-    images: [img4, img2],
-    volumeOptions: [
-      { label: "30ml", price: "129" },
-      { label: "50ml", price: "199" },
-    ],
-  },
-  {
-    name: "Ocean Breeze (v2)",
-    description: "Fresh marine notes with citrus undertones",
-    images: [img1, img4],
-    volumeOptions: [
-      { label: "30ml", price: "89" },
-      { label: "50ml", price: "149" },
-    ],
-  },
-  {
-    name: "Amber Noir (v2)",
-    description: "Warm amber essence with woody undertones",
-    images: [img2, img3, img1],
-    volumeOptions: [{ label: "30ml", price: "119" }],
-  },
+  // {
+  //   name: "Amber Noir",
+  //   description: "Warm amber essence with woody undertones",
+  //   images: [img3, img1],
+  //   volumeOptions: [{ label: "30ml", price: "119" }],
+  // },
+  // {
+  //   name: "Midnight Rose (v2)",
+  //   description: "A seductive blend of dark rose and vanilla",
+  //   images: [img4, img2],
+  //   volumeOptions: [
+  //     { label: "30ml", price: "129" },
+  //     { label: "50ml", price: "199" },
+  //   ],
+  // },
+  // {
+  //   name: "Ocean Breeze (v2)",
+  //   description: "Fresh marine notes with citrus undertones",
+  //   images: [img1, img4],
+  //   volumeOptions: [
+  //     { label: "30ml", price: "89" },
+  //     { label: "50ml", price: "149" },
+  //   ],
+  // },
+  // {
+  //   name: "Amber Noir (v2)",
+  //   description: "Warm amber essence with woody undertones",
+  //   images: [img2, img3, img1],
+  //   volumeOptions: [{ label: "30ml", price: "119" }],
+  // },
 ];
 
 // === SMOOTH Image Slider Component ===

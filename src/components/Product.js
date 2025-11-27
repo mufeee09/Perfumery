@@ -677,7 +677,7 @@ function Products() {
       key: keyId,
       amount: amountInPaise,
       currency: "INR",
-      name: "Rolsch Eventon",
+      name: "Atrab Aromatics",
       description: `Purchase of ${product.name} (${product.label})`,
       handler: function (response) {
         alert(

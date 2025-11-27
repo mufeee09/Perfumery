@@ -451,7 +451,7 @@ const ImageCarousel = () => {
                     <img
                       src={image.url}
                       alt={image.alt}
-                      loading="lazy"
+                      loading="eager"
                       className="carousel-image"
                     />
                   </div>

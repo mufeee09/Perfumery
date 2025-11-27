@@ -457,6 +457,7 @@ import img1 from "../images/641460.webp";
 import img2 from "../images/OIP.webp";
 import img3 from "../images/pexels-valeriya-965993-transformed.webp";
 import img4 from "../images/pexels-valeriya-2-transformed.webp";
+import img5 from "../images/Perfume1.webp"
 
 // === PRODUCT DATA STRUCTURE ===
 const products = [

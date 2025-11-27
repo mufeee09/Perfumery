@@ -75,7 +75,7 @@
 
 //   const handleTransitionEnd = () => {
 //     setIsTransitioning(false);
-    
+
 //     // Reset to middle set when reaching boundaries
 //     if (currentIndex >= images.length * 2) {
 //       setCurrentIndex(images.length);
@@ -239,7 +239,7 @@
 
 //   const handleTransitionEnd = () => {
 //     setIsTransitioning(false);
-    
+
 //     if (currentIndex >= images.length * 2) {
 //       setCurrentIndex(images.length);
 //     } else if (currentIndex <= 0) {
@@ -339,6 +339,7 @@ import img5 from "../images/pexels-valeriya-3-transformed.webp"
 import img6 from "../images/pexels-valeriya-965993-transformed.webp"
 import img7 from "../images/pexels-xanainai-4-transformed.webp"
 import img8 from "../images/1000211810-removebg-preview.webp"
+import img9 from "../images/Perfume1.webp";
 
 const ImageCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -346,14 +347,15 @@ const ImageCarousel = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const images = [
-    { id: 1, url: img8, alt: 'Image 1' },
-    { id: 2, url: img1, alt: 'Image 2' },
+    { id: 1, url: img9, alt: 'Image 1' },
+    { id: 2, url: img8, alt: 'Image 2' },
     { id: 3, url: img2, alt: 'Image 3' },
     { id: 4, url: img3, alt: 'Image 4' },
     { id: 5, url: img4, alt: 'Image 5' },
     { id: 6, url: img5, alt: 'Image 6' },
     { id: 7, url: img6, alt: 'Image 7' },
     { id: 8, url: img7, alt: 'Image 8' },
+    { id: 9, url: img1, alt: 'Image 9' },
   ];
 
   const extendedImages = [...images, ...images, ...images];
@@ -402,7 +404,7 @@ const ImageCarousel = () => {
 
   const handleTransitionEnd = () => {
     setIsTransitioning(false);
-    
+
     if (currentIndex >= images.length * 2) {
       setCurrentIndex(images.length);
     } else if (currentIndex <= 0) {

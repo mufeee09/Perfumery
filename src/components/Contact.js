@@ -33,6 +33,81 @@
 // export default Contact;
 
 
+// import React from "react";
+// import '../styles/Contact.css';
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faEnvelope, faPhone, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+
+// function Contact() {
+//   return (
+//     <section id="contact" className="contact-section">
+//       <div className="contact-container">
+//         <div className="contact-header">
+//           <span className="contact-label">Get In Touch</span>
+//           <h2 className="contact-title">
+//             Let's Create Your <strong>Signature Scent</strong>
+//           </h2>
+//           <p className="contact-subtitle">
+//             Our fragrance experts are here to guide you through an olfactory journey tailored to your unique essence
+//           </p>
+//         </div>
+
+//         <div className="contact-grid">
+//           <div className="contact-card">
+//             <div className="contact-icon-wrapper">
+//               <FontAwesomeIcon icon={faEnvelope} className="contact-icon" />
+//             </div>
+//             <h3 className="contact-card-title">Email Us</h3>
+//             <a href="mailto:atrabaromatics00@gmail.com" className="contact-link">
+//               atrabaromatics00@gmail.com
+//             </a>
+//             <p className="contact-card-text">We'll respond within 24 hours</p>
+//           </div>
+
+//           <div className="contact-card">
+//             <div className="contact-icon-wrapper">
+//               <FontAwesomeIcon icon={faPhone} className="contact-icon" />
+//             </div>
+//             <h3 className="contact-card-title">Call Us</h3>
+//             <a href="tel:+916360751727" className="contact-link">
+//               +91 63607 51727
+//             </a>
+//             <p className="contact-card-text">Mon - Sat, 10 AM - 7 PM IST</p>
+//           </div>
+
+//           <div className="contact-card">
+//             <div className="contact-icon-wrapper">
+//               <FontAwesomeIcon icon={faMapMarkerAlt} className="contact-icon" />
+//             </div>
+//             <h3 className="contact-card-title">Visit Us</h3>
+//             <div className="contact-addresses">
+//               <div className="contact-address">
+//                 <p className="contact-link">Mumbai Showroom</p>
+//                 <p className="contact-card-text">
+//                   11, Monalisa Building, Nahur Road,<br />
+//                   Mulund West, Mumbai 400080
+//                 </p>
+//               </div>
+//               <div className="contact-address">
+//                 <p className="contact-link">Melvisharam Outlet</p>
+//                 <p className="contact-card-text">
+//                   13, Kosa Street,<br />
+//                   Melvisharam, Ranipet 632509
+//                 </p>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+// export default Contact;
+
+
+
+
 import React from "react";
 import '../styles/Contact.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

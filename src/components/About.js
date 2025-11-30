@@ -112,10 +112,10 @@ function About() {
           Where Artistry Meets Essence
         </h2>
         <p className="about-description">
-          Founded in 2024, Atrab Aromatics is dedicated to crafting exquisite Extrait de Parfums that embody quality, 
-          artistry, and authenticity. We specialize in transforming premium essential oils into finely balanced perfumes 
-          that leave a lasting impression. Each product reflects our commitment to excellence, offering both quality 
-          and assurance that our customers can trust.
+          Established in 2024, Atrab Aromatics was born from a passion for timeless fragrance and the 
+          artistry of pure perfumery. At the heart of our brand lies a commitment to excellence: 
+          we meticulously transform the world’s finest essential oils into sophisticated Extrait de Parfums 
+          that elevate everyday moments.
         </p>
       </div>
 
@@ -127,7 +127,8 @@ function About() {
             </div>
             <h3 className="feature-title">Exceptional Quality</h3>
             <p className="feature-text">
-              Meticulously sourced from the world's most prestigious perfume houses and master perfumers, ensuring unparalleled excellence in every bottle.
+              Our dedicated team blends tradition and innovation, crafting each scent with 
+              precision and care to ensure a remarkable olfactory journey. 
             </p>
           </div>
 
@@ -137,7 +138,9 @@ function About() {
             </div>
             <h3 className="feature-title">Passionate Craftsmanship</h3>
             <p className="feature-text">
-              Each fragrance is a testament to artisanal dedication, blending tradition with innovation to create olfactory experiences that resonate with the soul.
+              We believe that a great perfume is more than a fragrance—it is an experience,
+               a memory in the making, and a signature of individuality.Discover the difference of authenticity 
+               with us, and let our creations become part of your story.
             </p>
           </div>
 
@@ -147,7 +150,9 @@ function About() {
             </div>
             <h3 className="feature-title">Timeless Luxury</h3>
             <p className="feature-text">
-              From exquisite packaging to the final lingering note, we deliver an immersive luxury experience that transcends the ordinary and defines elegance.
+              At Atrab Aromatics, quality is our promise. Every bottle is a result of rigorous sourcing, 
+              expert formulation, and unwavering attention to detail, offering not just premium perfumes, 
+              but true sensory luxury you can rely on. 
             </p>
           </div>
         </div>

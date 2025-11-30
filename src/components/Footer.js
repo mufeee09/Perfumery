@@ -6,8 +6,8 @@ import whatsappLogo from '../Logo/Whatsapp_logo.png';
 import "../styles/Footer.css"; // Using merged CSS
 
 const socialLinks = [
-  { name: "Facebook", url: "https://www.facebook.com/", imgSrc: facebookLogo, alt: "Facebook Icon", className: "facebook-bg" },
-  { name: "Instagram", url: "https://instagram.com/", imgSrc: instagramLogo, alt: "Instagram Icon", className: "instagram-bg" },
+  { name: "Facebook", url: "https://www.facebook.com/people/Atrab-Aromatics/61584331467577/?rdid=y03tL4y9WpFkBwjg&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BUZoEsCxU%2F", imgSrc: facebookLogo, alt: "Facebook Icon", className: "facebook-bg" },
+  { name: "Instagram", url: "https://www.instagram.com/atrab_aromatics/", imgSrc: instagramLogo, alt: "Instagram Icon", className: "instagram-bg" },
   { name: "WhatsApp", url: "https://wa.me/916360751727?text=Hello%20there!", imgSrc: whatsappLogo, alt: "WhatsApp Icon", className: "whatsapp-bg" },
 ];
 

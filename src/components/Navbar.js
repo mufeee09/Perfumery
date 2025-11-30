@@ -281,7 +281,7 @@ function Navbar() {
         <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
           <li className="nav-item"><a href="#about">Home</a></li>
           <li className="nav-item"><a href="#products">Products</a></li>
-          <li className="nav-item"><a href="#gallery">Gallery</a></li>
+          {/* <li className="nav-item"><a href="#gallery">Gallery</a></li> */}
           <li className="nav-item"><a href="#contact">Contact</a></li>
         </ul>
       </div>

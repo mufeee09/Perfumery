@@ -1434,7 +1434,7 @@ nav.scrolled .brand h1 {
     width: 0;
     height: 2px;
     background: linear-gradient(90deg, #3a3a3a 0%, #b5b5b5 100%);
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .nav-item a:hover {
@@ -1831,10 +1831,10 @@ a, button {
 
 /* Focus states for accessibility */
 .nav-item a:focus {
-    outline: 2px solid #b5b5b5;
-    outline-offset: 4px;
-    border-radius: 4px;
+    outline: none;
+    opacity: 0.85;
 }
+
 
 .hamburger:focus {
     outline: 2px solid #b5b5b5;

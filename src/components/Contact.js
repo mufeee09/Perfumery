@@ -133,8 +133,8 @@ function Contact() {
               <FontAwesomeIcon icon={faEnvelope} className="contact-icon" />
             </div>
             <h3 className="contact-card-title">Email Us</h3>
-            <a href="mailto:atrabaromatics00@gmail.com" className="contact-link">
-              atrabaromatics00@gmail.com
+            <a href="mailto:atrabaromatics@gmail.com" className="contact-link">
+              atrabaromatics@gmail.com
             </a>
             <p className="contact-card-text">We'll respond within 24 hours</p>
           </div>
@@ -159,8 +159,15 @@ function Contact() {
               <div className="contact-address">
                 <p className="contact-link">Mumbai Showroom</p>
                 <p className="contact-card-text">
-                  11, Monalisa Building, Nahur Road,<br />
-                  Mulund West, Mumbai 400080
+                  <a
+                    className="contact-card-text contact-link"
+                    href="https://www.google.com/maps?q=12.921745,79.276562"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    No, 62 sowcar nagar melvisharam - 632509.
+                  </a>
+
                 </p>
               </div>
               <div className="contact-address">

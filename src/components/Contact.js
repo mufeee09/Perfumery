@@ -157,24 +157,31 @@ function Contact() {
             <h3 className="contact-card-title">Visit Us</h3>
             <div className="contact-addresses">
               <div className="contact-address">
-                <p className="contact-link">Mumbai Showroom</p>
+                <p className="contact-link">Bengaluru Showroom</p>
                 <p className="contact-card-text">
                   <a
                     className="contact-card-text contact-link"
-                    href="https://www.google.com/maps?q=12.921745,79.276562"
+                    href="https://www.google.com/maps?q=12.990403, 77.603562"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    No, 62 sowcar nagar melvisharam - 632509.
+                    TF 10, RK Kohinoor Apartment, Colonel Hill Rd, Bamboo Bazar,<br/> Shivaji Nagar, Bengaluru,<br/> Karnataka - 560051.
                   </a>
 
                 </p>
               </div>
               <div className="contact-address">
-                <p className="contact-link">Melvisharam Outlet</p>
+                <p className="contact-link">Melvisharam Showroom</p>
                 <p className="contact-card-text">
-                  13, Kosa Street,<br />
-                  Melvisharam, Ranipet 632509
+                  <a
+                    className="contact-card-text contact-link"
+                    href="https://www.google.com/maps?q=12.921738, 79.276560"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    62, Sowcar Nagar, North Bypass Road, Melvisharam, Ranipet,<br/> Tamil Nadu - 632509.
+                  </a>
+
                 </p>
               </div>
             </div>

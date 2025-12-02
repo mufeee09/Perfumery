@@ -110,22 +110,55 @@
 
 // export default PerfumeHero;
 
-import React from 'react';
-import '../styles/Poster.css';
-import img from "../images/Perfume1.jpeg";
+// import React from 'react';
+// import '../styles/Poster.css';
+// import img from "../images/0176c589-9f7a-4a50-b1bc-364a4dab922c.jpeg";
+
+// const PerfumeHero = ({ altText = "Perfume Bottle" }) => {
+//   return (
+//     <div className="perfume-hero">
+//       <div className="image-container">
+//         <img
+//           src={img}
+//           alt={altText}
+//           className="hero-image"
+//           loading="eager"
+//           fetchpriority="high"
+//         />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default PerfumeHero;
+
+
+import React from "react";
+import "../styles/Poster.css"
+import img200 from "../images/0176c589-9f7a-4a50-b1bc-364a4dab922c-200w.jpeg";
+import img400 from "../images/0176c589-9f7a-4a50-b1bc-364a4dab922c-400w.jpeg";
+import img800 from "../images/0176c589-9f7a-4a50-b1bc-364a4dab922c-800w.jpeg";
+import img1200 from "../images/0176c589-9f7a-4a50-b1bc-364a4dab922c-1200w.jpeg";
+import img1600 from "../images/0176c589-9f7a-4a50-b1bc-364a4dab922c-1600w.jpeg";
 
 const PerfumeHero = ({ altText = "Perfume Bottle" }) => {
   return (
-    <div className="perfume-hero">
-      <div className="image-container">
-        <img
-          src={img}
-          alt={altText}
-          className="hero-image"
-          loading="eager"
-          fetchpriority="high"
-        />
-      </div>
+    <div className="hero-wrapper">
+      <img
+        src={img800} // default fallback
+        srcSet={`
+          ${img200} 200w,
+          ${img400} 400w,
+          ${img800} 800w,
+          ${img1200} 1200w, 
+          ${img1600} 1600w
+        `}
+        sizes="100vw"
+        alt={altText}
+        className="hero-img"
+        loading="lazy"
+        fetchpriority="high"
+      />
     </div>
   );
 };

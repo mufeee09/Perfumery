@@ -229,6 +229,8 @@ import Footer from "./components/Footer";
 import ContactForm from "./components/ContactForm";
 // import BounceCards from "./components/BounceCards";
 import Poster from "./components/Poster"
+import Poster2 from "./components/Poster2"
+import Poster3 from "./components/Poster3"
 // import DomeGallery from "./components/Gallery";
 import './styles/Loader.css';
 
@@ -345,6 +347,8 @@ function App() {
           <Navbar />
           <About />
           <Poster />
+          <Poster2 />
+          <Poster3 />
           <Products />
           {/* <BounceCards /> */}
           <Contact />

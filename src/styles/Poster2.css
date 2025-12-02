@@ -1,0 +1,84 @@
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================
+   HERO WRAPPER (HEIGHT CONTROL)
+   ============================ */
+.hero-wrapper {
+  width: 100%;
+  height: 60vh; /* Default for mobiles/tablets */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #000; /* optional */
+}
+
+/* Normal desktop screens */
+@media (min-width: 1024px) {
+  .hero-wrapper {
+    height: 80vh;
+  }
+}
+
+/* Ultra-wide screens (21:9, 32:9) */
+@media (min-aspect-ratio: 21/9) {
+  .hero-wrapper {
+    height: 100vh;
+  }
+}
+
+/* ============================
+   HERO IMAGE (FIT CONTROL)
+   ============================ */
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* mobile default */
+  object-position: center;
+  display: block;
+  transition: opacity 0.7s ease;
+}
+
+@media (min-width: 1024px) {
+  .hero-img {
+    object-fit: contain;  /* show full bottle */
+  }
+}
+
+/* Ultra-wide monitors → prevent cropping */
+@media (min-aspect-ratio: 21/9) {
+  .hero-img {
+    object-fit: contain;
+  }
+}
+
+/* Retina screens */
+@media (min-resolution: 150dpi) {
+  .hero-img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* ============================
+   FADE-IN EFFECT
+   ============================ */
+.fade-img {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.fade-img.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}

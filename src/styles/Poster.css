@@ -330,7 +330,7 @@
 
 /* PerfumeHero.css */
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -347,19 +347,18 @@
 
 .image-container {
   width: 100%;
-  max-width: 900px;   /* LIMIT width on big screens */
+  max-width: 900px;  
   margin: 0 auto;
 }
 
 .hero-image {
   width: 100%;
   height: auto;
-  max-height: 80vh;   /* LIMIT height on laptops & mobiles */
+  max-height: 80vh;  
   object-fit: contain;
   display: block;
 }
 
-/* Mobile devices (portrait) - up to 599px */
 @media (max-width: 599px) {
   .perfume-hero {
     min-height: 100vh;
@@ -371,7 +370,6 @@
   }
 }
 
-/* Mobile devices (landscape) and small tablets - 600px to 899px */
 @media (min-width: 600px) and (max-width: 899px) {
   .perfume-hero {
     min-height: 100vh;
@@ -382,7 +380,6 @@
   }
 }
 
-/* Tablets and small desktops - 900px to 1199px */
 @media (min-width: 900px) and (max-width: 1199px) {
   .perfume-hero {
     min-height: 100vh;
@@ -393,7 +390,6 @@
   }
 }
 
-/* Desktop - 1200px to 1799px */
 @media (min-width: 1200px) and (max-width: 1799px) {
   .perfume-hero {
     min-height: 100vh;
@@ -404,7 +400,6 @@
   }
 }
 
-/* Large desktop and 4K - 1800px and above */
 @media (min-width: 1800px) {
   .perfume-hero {
     min-height: 100vh;
@@ -416,7 +411,6 @@
   }
 }
 
-/* Aspect ratio optimization for the original image (3000 × 1125 = 8:3 ratio) */
 @media (min-aspect-ratio: 8/3) {
   .hero-image {
     object-fit: contain;
@@ -433,7 +427,6 @@
   }
 }
 
-/* High DPI displays (Retina) */
 @media (-webkit-min-device-pixel-ratio: 2),
        (min-resolution: 192dpi) {
   .hero-image {
@@ -442,7 +435,6 @@
   }
 }
 
-/* Print styles */
 @media print {
   .perfume-hero {
     min-height: auto;
@@ -453,4 +445,175 @@
     height: auto;
     page-break-inside: avoid;
   }
+} */
+
+/* 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hero-wrapper {
+  width: 100%;
+  height: 60vh;
+  background: #000; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-position: center;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+@media (min-width: 1024px) {
+  .hero-container {
+    height: 80vh; 
+  }
+}
+
+
+@media (min-width: 900px) {
+  .hero-img {
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-img {
+    object-fit: contain;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .hero-img {
+    object-fit: contain;
+  }
+}
+
+@media (orientation: landscape) {
+  .hero-img {
+    object-fit: contain;
+  }
+}
+
+@media (min-aspect-ratio: 21/9) {
+  .hero-img {
+    height: 100vh;
+  }
+}
+
+@media (min-resolution: 150dpi) {
+  .hero-img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+
+.fade-img {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.fade-img.loaded {
+  opacity: 1;
+  transform: translateY(0);
+} */
+
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================
+   HERO WRAPPER (HEIGHT CONTROL)
+   ============================ */
+.hero-wrapper {
+  width: 100%;
+  height: 60vh; /* Default for mobiles/tablets */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #000; /* optional */
+}
+
+/* Normal desktop screens */
+@media (min-width: 1024px) {
+  .hero-wrapper {
+    height: 80vh;
+  }
+}
+
+/* Ultra-wide screens (21:9, 32:9) */
+@media (min-aspect-ratio: 21/9) {
+  .hero-wrapper {
+    height: 100vh;
+  }
+}
+
+/* ============================
+   HERO IMAGE (FIT CONTROL)
+   ============================ */
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* mobile default */
+  object-position: center;
+  display: block;
+  transition: opacity 0.7s ease;
+}
+
+@media (min-width: 1024px) {
+  .hero-img {
+    object-fit: contain;  /* show full bottle */
+  }
+}
+
+/* Ultra-wide monitors → prevent cropping */
+@media (min-aspect-ratio: 21/9) {
+  .hero-img {
+    object-fit: contain;
+  }
+}
+
+/* Retina screens */
+@media (min-resolution: 150dpi) {
+  .hero-img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* ============================
+   FADE-IN EFFECT
+   ============================ */
+.fade-img {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.fade-img.loaded {
+  opacity: 1;
+  transform: translateY(0);
 }

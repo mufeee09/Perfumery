@@ -125,7 +125,7 @@
 //     document.body.appendChild(script);
 
 //     const productImages = [img1, img2, img3, img4];
-    
+
 //     const galleryImages = [
 //       galleryImg1,
 //       galleryImg2,
@@ -135,9 +135,9 @@
 //       galleryImg6,
 //       galleryImg7
 //     ];
-    
+
 //     const allImages = [...productImages, ...galleryImages];
-    
+
 //     let loadedCount = 0;
 //     const totalImages = allImages.length;
 //     const minimumLoadTime = 5000; 
@@ -165,19 +165,19 @@
 //     const loadAllImages = async () => {
 //       try {
 //         await Promise.all(allImages.map(src => preloadImage(src)));
-        
+
 //         const elapsedTime = Date.now() - startTime;
 //         const remainingTime = Math.max(0, minimumLoadTime - elapsedTime);
-        
+
 //         setTimeout(() => {
 //           setIsLoading(false);
 //         }, remainingTime);
 //       } catch (error) {
 //         console.error("Error loading images:", error);
-        
+
 //         const elapsedTime = Date.now() - startTime;
 //         const remainingTime = Math.max(0, minimumLoadTime - elapsedTime);
-        
+
 //         setTimeout(() => {
 //           setIsLoading(false);
 //         }, remainingTime);
@@ -270,7 +270,7 @@ function App() {
     document.body.appendChild(script);
 
     const productImages = [img1, img2, img3, img4];
-    
+
     const galleryImages = [
       galleryImg1,
       galleryImg2,
@@ -280,12 +280,12 @@ function App() {
       galleryImg6,
       galleryImg7
     ];
-    
+
     const allImages = [...productImages, ...galleryImages];
-    
+
     let loadedCount = 0;
     const totalImages = allImages.length;
-    const minimumLoadTime = 5000; 
+    const minimumLoadTime = 5000;
     const startTime = Date.now();
 
     const preloadImage = (src) => {
@@ -310,19 +310,19 @@ function App() {
     const loadAllImages = async () => {
       try {
         await Promise.all(allImages.map(src => preloadImage(src)));
-        
+
         const elapsedTime = Date.now() - startTime;
         const remainingTime = Math.max(0, minimumLoadTime - elapsedTime);
-        
+
         setTimeout(() => {
           setIsLoading(false);
         }, remainingTime);
       } catch (error) {
         console.error("Error loading images:", error);
-        
+
         const elapsedTime = Date.now() - startTime;
         const remainingTime = Math.max(0, minimumLoadTime - elapsedTime);
-        
+
         setTimeout(() => {
           setIsLoading(false);
         }, remainingTime);
@@ -346,9 +346,9 @@ function App() {
         <>
           <Navbar />
           <About />
-          <Poster />
           <Poster2 />
           <Poster3 />
+          <Poster />
           <Products />
           {/* <BounceCards /> */}
           <Contact />

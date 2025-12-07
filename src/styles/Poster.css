@@ -534,7 +534,79 @@ html {
 } */
 
 
-/* Reset */
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hero-wrapper {
+  width: 100%;
+  height: 60vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #000;
+}
+
+@media (min-width: 1024px) {
+  .hero-wrapper {
+    height: 80vh;
+  }
+}
+
+@media (min-aspect-ratio: 21/9) {
+  .hero-wrapper {
+    height: 100vh;
+  }
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     
+  object-position: center;
+  display: block;
+  transition: opacity 0.7s ease;
+}
+
+@media (min-width: 1024px) {
+  .hero-img {
+    object-fit: contain; 
+  }
+}
+
+@media (min-aspect-ratio: 21/9) {
+  .hero-img {
+    object-fit: contain;
+  }
+}
+
+@media (min-resolution: 150dpi) {
+  .hero-img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+.fade-img {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.fade-img.loaded {
+  opacity: 1;
+  transform: translateY(0);
+} */
+
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -545,68 +617,81 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ============================
-   HERO WRAPPER (HEIGHT CONTROL)
-   ============================ */
 .hero-wrapper {
   width: 100%;
-  height: 60vh; /* Default for mobiles/tablets */
+  background: #000;
   display: flex;
   justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  background: #000; /* optional */
+  align-items: flex-start; /* ✅ important */
+  padding: 16px env(safe-area-inset-left)
+           16px env(safe-area-inset-right);
 }
 
-/* Normal desktop screens */
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   .hero-wrapper {
     height: 80vh;
   }
 }
 
-/* Ultra-wide screens (21:9, 32:9) */
 @media (min-aspect-ratio: 21/9) {
   .hero-wrapper {
     height: 100vh;
   }
-}
+} */
 
-/* ============================
-   HERO IMAGE (FIT CONTROL)
-   ============================ */
 .hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;      /* mobile default */
-  object-position: center;
+  width: 92vw;
+  max-width: 360px;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
   display: block;
-  transition: opacity 0.7s ease;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
+  .hero-wrapper {
+    padding-top: 32px;
+  }
+
   .hero-img {
-    object-fit: contain;  /* show full bottle */
+    width: 70vw;
+    max-width: 520px;
   }
 }
 
-/* Ultra-wide monitors → prevent cropping */
+/* Laptop */
+@media (min-width: 1024px) {
+  .hero-wrapper {
+    align-items: center;
+    min-height: 75vh; /* ✅ controlled height only for big screens */
+  }
+
+  .hero-img {
+    width: 50vw;
+    max-width: 680px;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1440px) {
+  .hero-img {
+    width: 40vw;
+    max-width: 800px;
+  }
+}
+
 @media (min-aspect-ratio: 21/9) {
   .hero-img {
     object-fit: contain;
   }
 }
 
-/* Retina screens */
 @media (min-resolution: 150dpi) {
   .hero-img {
     image-rendering: -webkit-optimize-contrast;
   }
 }
 
-/* ============================
-   FADE-IN EFFECT
-   ============================ */
 .fade-img {
   opacity: 0;
   transform: translateY(12px);

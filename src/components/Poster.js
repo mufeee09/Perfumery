@@ -135,25 +135,46 @@
 
 import React from "react";
 import "../styles/Poster.css"
+import img100 from "../images/0176c589-9f7a-4a50-b1bc-364a4dab922c-100w.jpeg";
 import img200 from "../images/0176c589-9f7a-4a50-b1bc-364a4dab922c-200w.jpeg";
+import img300 from "../images/0176c589-9f7a-4a50-b1bc-364a4dab922c-300w.jpeg";
 import img400 from "../images/0176c589-9f7a-4a50-b1bc-364a4dab922c-400w.jpeg";
+import img500 from "../images/0176c589-9f7a-4a50-b1bc-364a4dab922c-500w.jpeg";
+import img600 from "../images/0176c589-9f7a-4a50-b1bc-364a4dab922c-600w.jpeg";
+import img700 from "../images/0176c589-9f7a-4a50-b1bc-364a4dab922c-700w.jpeg";
 import img800 from "../images/0176c589-9f7a-4a50-b1bc-364a4dab922c-800w.jpeg";
+import img900 from "../images/0176c589-9f7a-4a50-b1bc-364a4dab922c-900w.jpeg";
+import img1000 from "../images/0176c589-9f7a-4a50-b1bc-364a4dab922c-1000w.jpeg";
+import img1100 from "../images/0176c589-9f7a-4a50-b1bc-364a4dab922c-1100w.jpeg";
 import img1200 from "../images/0176c589-9f7a-4a50-b1bc-364a4dab922c-1200w.jpeg";
+// import img1300 from "../images/0176c589-9f7a-4a50-b1bc-364a4dab922c-1300w.jpeg";
+import img1400 from "../images/0176c589-9f7a-4a50-b1bc-364a4dab922c-1400w.jpeg";
+import img1500 from "../images/0176c589-9f7a-4a50-b1bc-364a4dab922c-1500w.jpeg";
 import img1600 from "../images/0176c589-9f7a-4a50-b1bc-364a4dab922c-1600w.jpeg";
 
 const PerfumeHero = ({ altText = "Perfume Bottle" }) => {
   return (
     <div className="hero-wrapper">
       <img
-        src={img800} // default fallback
+        src={img400} // default fallback
         srcSet={`
+          ${img100} 100w,
           ${img200} 200w,
+          ${img300} 300w,
           ${img400} 400w,
+          ${img500} 500w,
+          ${img600} 600w,
+          ${img700} 700w,
           ${img800} 800w,
-          ${img1200} 1200w, 
+          ${img900} 900w,
+          ${img1000} 1000w,
+          ${img1100} 1100w,
+          ${img1200} 1200w,
+          ${img1400} 1400w,
+          ${img1500} 1500w, 
           ${img1600} 1600w
         `}
-        sizes="100vw"
+        sizes="70vw"
         alt={altText}
         className="hero-img"
         loading="lazy"

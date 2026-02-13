@@ -233,7 +233,6 @@ import Poster2 from "./components/Poster2"
 import Poster3 from "./components/Poster3"
 // import DomeGallery from "./components/Gallery";
 import './styles/Loader.css';
-import ScrollReveal from "./components/ScrollReveal";
 
 
 import img1 from "./images/641460.webp";

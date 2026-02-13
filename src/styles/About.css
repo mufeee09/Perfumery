@@ -783,9 +783,14 @@ background: transparent !important;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 40px;
+   align-items: stretch;
 }
 
 .feature-card {
+  display: flex;              /* ADD */
+  flex-direction: column;     /* ADD */
+  justify-content: flex-start;
+  height: 100%;            
   position: relative;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(15px);

@@ -975,6 +975,7 @@
 import React, { useState, useEffect } from "react";
 // import { supabase } from "../supabase";
 import "../styles/Product.css";
+import ScrollReveal from "./ScrollReveal";
 
 /* ===========================
    PRODUCT CONFIG (NO IMAGES)
@@ -1111,51 +1112,51 @@ export default function Products() {
   /* ===== FETCH IMAGES FROM SUPABASE ===== */
   const fetchProductImages = async () => {
     try {
-//       const finalProducts = [];
+      //       const finalProducts = [];
 
-//       for (const p of PRODUCT_CONFIG) {
-//         const { data, error } = await supabase
-//   .storage
-//   .from("product-images")
-//   .list("", { limit: 100 }); // list root folder
+      //       for (const p of PRODUCT_CONFIG) {
+      //         const { data, error } = await supabase
+      //   .storage
+      //   .from("product-images")
+      //   .list("", { limit: 100 }); // list root folder
 
-// console.log("Root folder files/folders:", data, error);
-//         if (error) {
-//           console.error("Storage error:", error);
-//           continue;
-//         }
+      // console.log("Root folder files/folders:", data, error);
+      //         if (error) {
+      //           console.error("Storage error:", error);
+      //           continue;
+      //         }
 
-//         console.log(`Files in ${p.key}:`, data.map(f => f.name));
+      //         console.log(`Files in ${p.key}:`, data.map(f => f.name));
 
-//         // Construct public URLs for each file
-//         const imageUrls = data.map(file => {
-//           const { publicUrl, error } = supabase
-//             .storage
-//             .from("product-images")
-//             .getPublicUrl(`${p.key}/${file.name}`);
+      //         // Construct public URLs for each file
+      //         const imageUrls = data.map(file => {
+      //           const { publicUrl, error } = supabase
+      //             .storage
+      //             .from("product-images")
+      //             .getPublicUrl(`${p.key}/${file.name}`);
 
-//           if (error) console.error("Public URL error:", error);
-//           return publicUrl;
-//         });
+      //           if (error) console.error("Public URL error:", error);
+      //           return publicUrl;
+      //         });
 
-//         console.log(`Image URLs for ${p.key}:`, imageUrls);
+      //         console.log(`Image URLs for ${p.key}:`, imageUrls);
 
-//         finalProducts.push({ ...p, images: imageUrls });
-//       }
+      //         finalProducts.push({ ...p, images: imageUrls });
+      //       }
 
-//       console.log("Final Products Array:", finalProducts);
+      //       console.log("Final Products Array:", finalProducts);
 
-//       setProducts(finalProducts);
+      //       setProducts(finalProducts);
 
-const finalProducts = PRODUCT_CONFIG.map(p => {
-  // Replace with actual file names
-  const files = ["1.webp", "2.webp"]; 
-  const imageUrls = files.map(f =>
-    `${process.env.REACT_APP_SUPABASE_URL}/storage/v1/object/public/product-images/${p.key}/${f}`
-  );
-  return { ...p, images: imageUrls };
-});
-setProducts(finalProducts);
+      const finalProducts = PRODUCT_CONFIG.map(p => {
+        // Replace with actual file names
+        const files = ["1.webp", "2.webp"];
+        const imageUrls = files.map(f =>
+          `${process.env.REACT_APP_SUPABASE_URL}/storage/v1/object/public/product-images/${p.key}/${f}`
+        );
+        return { ...p, images: imageUrls };
+      });
+      setProducts(finalProducts);
       setLoading(false);
     } catch (err) {
       console.error("Fetch images failed:", err);
@@ -1199,8 +1200,9 @@ setProducts(finalProducts);
 
       <div className="product-grid">
         {filtered.map((p) => (
-          <ProductCard key={p.key} product={p} handlePayNow={handlePayNow} />
-        ))}
+          <ScrollReveal key={p.key}>
+            <ProductCard product={p} handlePayNow={handlePayNow} />
+          </ScrollReveal>))}
       </div>
     </section>
   );

@@ -112,6 +112,7 @@ import React from "react";
 import '../styles/Contact.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import ScrollReveal from "./ScrollReveal";
 
 function Contact() {
   return (
@@ -128,6 +129,7 @@ function Contact() {
         </div>
 
         <div className="contact-grid">
+          <ScrollReveal>
           <div className="contact-card">
             <div className="contact-icon-wrapper">
               <FontAwesomeIcon icon={faEnvelope} className="contact-icon" />
@@ -138,6 +140,9 @@ function Contact() {
             </a>
             <p className="contact-card-text">We'll respond within 24 hours</p>
           </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
 
           <div className="contact-card">
             <div className="contact-icon-wrapper">
@@ -149,6 +154,9 @@ function Contact() {
             </a>
             <p className="contact-card-text">Mon - Sat, 10 AM - 7 PM IST</p>
           </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
 
           <div className="contact-card">
             <div className="contact-icon-wrapper">
@@ -186,6 +194,7 @@ function Contact() {
               </div>
             </div>
           </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

@@ -347,35 +347,13 @@ function App() {
       ) : (
         <>
           <Navbar />
-
-          <ScrollReveal>
-            <About />
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <Poster2 />
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <Poster3 />
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <Poster />
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <Products />
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <Contact />
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <ContactForm />
-          </ScrollReveal>
-
+          <About />
+          <Poster2 />
+          <Poster3 />
+          <Poster />
+          <Products />
+          <Contact />
+          <ContactForm />
           <Footer />
 
         </>

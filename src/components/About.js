@@ -102,10 +102,12 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faHeart, faGem } from "@fortawesome/free-solid-svg-icons";
 import '../styles/About.css';
+import ScrollReveal from "./ScrollReveal";
 
 function About() {
   return (
     <section id="about" className="about-section">
+      <ScrollReveal>
       <div className="about-hero">
         <div className="about-label">Our Story</div>
         <h2 className="about-title">
@@ -118,9 +120,11 @@ function About() {
           that elevate everyday moments.
         </p>
       </div>
+      </ScrollReveal>
 
       <div className="features-container">
         <div className="features-grid">
+          <ScrollReveal>
           <div className="feature-card">
             <div className="icon-wrapper">
               <FontAwesomeIcon icon={faStar} className="feature-icon" size="2x" />
@@ -131,7 +135,9 @@ function About() {
               precision and care to ensure a remarkable olfactory journey. 
             </p>
           </div>
+          </ScrollReveal>
 
+          <ScrollReveal>
           <div className="feature-card">
             <div className="icon-wrapper">
               <FontAwesomeIcon icon={faHeart} className="feature-icon" size="2x" />
@@ -143,7 +149,9 @@ function About() {
                with us, and let our creations become part of your story.
             </p>
           </div>
+          </ScrollReveal>
 
+          <ScrollReveal>
           <div className="feature-card">
             <div className="icon-wrapper">
               <FontAwesomeIcon icon={faGem} className="feature-icon" size="2x" />
@@ -155,6 +163,7 @@ function About() {
               but true sensory luxury you can rely on. 
             </p>
           </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

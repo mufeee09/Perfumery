@@ -1,6 +1,7 @@
 
 import React from "react";
 import "../styles/Poster3.css"
+import ScrollReveal from "./ScrollReveal";
 import img200 from "../images/701258e5-b594-4f41-abbd-3a99d7726301-200w.jpeg";
 import img400 from "../images/701258e5-b594-4f41-abbd-3a99d7726301-400w.jpeg";
 import img800 from "../images/701258e5-b594-4f41-abbd-3a99d7726301-800w.jpeg";
@@ -10,6 +11,7 @@ import img1600 from "../images/701258e5-b594-4f41-abbd-3a99d7726301-1600w.jpeg";
 const PerfumeHero = ({ altText = "Perfume Bottle" }) => {
   return (
     <div className="hero-wrapper">
+      <ScrollReveal>
       <img
         src={img800} // default fallback
         srcSet={`
@@ -25,6 +27,7 @@ const PerfumeHero = ({ altText = "Perfume Bottle" }) => {
         loading="lazy"
         fetchpriority="high"
       />
+      </ScrollReveal>
     </div>
   );
 };

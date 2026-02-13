@@ -238,6 +238,7 @@
 import React, { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import "../styles/ContactForm.css";
+import ScrollReveal from "./ScrollReveal";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -322,6 +323,7 @@ const ContactForm = () => {
   };
 
   return (
+    <ScrollReveal>
     <div className="form-container">
       <form id="form" onSubmit={handleSubmit}>
         
@@ -390,6 +392,7 @@ const ContactForm = () => {
         {toast.message}
       </div>
     </div>
+    </ScrollReveal>
   );
 };
 

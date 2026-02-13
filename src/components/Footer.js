@@ -1,7 +1,6 @@
 import React from "react";
 import facebookLogo from '../Logo/Facebook_logo.png';
 import instagramLogo from '../Logo/Instagarm_logo.png';
-import twitterLogo from '../Logo/Twitter_logo.png';
 import whatsappLogo from '../Logo/Whatsapp_logo.png';
 import "../styles/Footer.css"; // Using merged CSS
 

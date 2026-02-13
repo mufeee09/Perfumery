@@ -21,10 +21,12 @@
     "cors": "^2.8.5",
     "embla-carousel-react": "^8.6.0",
     "express": "^5.1.0",
+    "framer-motion": "^12.34.0",
     "gsap": "^3.13.0",
     "razorpay": "^2.9.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-intersection-observer": "^10.0.2",
     "react-scroll": "^1.9.3",
     "web-vitals": "^5.1.0"
   },

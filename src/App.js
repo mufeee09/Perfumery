@@ -233,6 +233,8 @@ import Poster2 from "./components/Poster2"
 import Poster3 from "./components/Poster3"
 // import DomeGallery from "./components/Gallery";
 import './styles/Loader.css';
+import ScrollReveal from "./components/ScrollReveal";
+
 
 import img1 from "./images/641460.webp";
 import img2 from "./images/OIP.webp";
@@ -345,15 +347,37 @@ function App() {
       ) : (
         <>
           <Navbar />
-          <About />
-          <Poster2 />
-          <Poster3 />
-          <Poster />
-          <Products />
-          {/* <BounceCards /> */}
-          <Contact />
-          <ContactForm />
+
+          <ScrollReveal>
+            <About />
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <Poster2 />
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <Poster3 />
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <Poster />
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <Products />
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <Contact />
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <ContactForm />
+          </ScrollReveal>
+
           <Footer />
+
         </>
       )}
 
